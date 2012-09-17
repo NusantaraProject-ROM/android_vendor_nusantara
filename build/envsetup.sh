@@ -5,6 +5,7 @@ Additional functions:
 - pushboot:	   Push a file from your OUT dir to your phone
                    and reboots it, using absolute path.
 - repopick:        Utility to fetch changes from Gerrit.
+- aospremote:      Add git remote for matching AOSP repository.
 EOF
 }
 
@@ -84,3 +85,19 @@ function repopick() {
     T=$(gettop)
     $T/vendor/du/build/repopick.py $@
 }
+
+function aospremote() {
+    git remote rm aosp 2> /dev/null
+    if [ ! -d .git ]
+    then
+        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
+    fi
+    PROJECT=`pwd | sed s#$ANDROID_BUILD_TOP/##g`
+    if (echo $PROJECT | grep -qv "^device")
+    then
+        PFX="platform/"
+    fi
+    git remote add aosp https://android.googlesource.com/$PFX$PROJECT
+    echo "Remote 'aosp' created"
+}
+export -f aospremote
