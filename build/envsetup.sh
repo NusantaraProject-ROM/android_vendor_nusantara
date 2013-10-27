@@ -6,6 +6,7 @@ Additional functions:
                    and reboots it, using absolute path.
 - repopick:        Utility to fetch changes from Gerrit.
 - aospremote:      Add git remote for matching AOSP repository.
+- cafremote:       Add git remote for matching CodeAurora repository.
 EOF
 }
 
@@ -104,3 +105,23 @@ function aospremote() {
     echo "Remote 'aosp' created"
 }
 export -f aospremote
+
+function cafremote()
+{
+    git remote rm caf 2> /dev/null
+    if [ ! -d .git ]
+    then
+        echo .git directory not found. Please run this from the root directory of the Android repository you wish to set up.
+    fi
+    if [ ! "$ANDROID_BUILD_TOP" ]; then
+        export ANDROID_BUILD_TOP=$(gettop)
+    fi
+    PROJECT=`pwd | sed s#$ANDROID_BUILD_TOP/##g`
+    if (echo $PROJECT | grep -qv "^device")
+    then
+        PFX="platform/"
+    fi
+    git remote add caf git://codeaurora.org/$PFX$PROJECT
+    echo "Remote 'caf' created"
+}
+export -f cafremote
