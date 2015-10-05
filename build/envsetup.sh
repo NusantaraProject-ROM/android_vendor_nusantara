@@ -2,6 +2,8 @@ function __print_extra_functions_help() {
 cat <<EOF
 Additional functions:
 - mka:             Builds using SCHED_BATCH on all processors.
+- pushboot:	   Push a file from your OUT dir to your phone
+                   and reboots it, using absolute path.
 EOF
 }
 
@@ -59,4 +61,19 @@ function brunch()
         return 1
     fi
     return $?
+}
+
+function pushboot() {
+    if [ ! -f $OUT/$* ]; then
+        echo "File not found: $OUT/$*"
+        return 1
+    fi
+
+    adb root
+    sleep 1
+    adb wait-for-device
+    adb remount
+
+    adb push $OUT/$* /$*
+    adb reboot
 }
