@@ -96,7 +96,7 @@ function aospremote() {
     if [ ! "$ANDROID_BUILD_TOP" ]; then
         export ANDROID_BUILD_TOP=$(gettop)
     fi
-    PROJECT=`pwd | sed s#$ANDROID_BUILD_TOP/##g`
+    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
     if (echo $PROJECT | grep -qv "^device")
     then
         PFX="platform/"
@@ -116,7 +116,7 @@ function cafremote()
     if [ ! "$ANDROID_BUILD_TOP" ]; then
         export ANDROID_BUILD_TOP=$(gettop)
     fi
-    PROJECT=`pwd | sed s#$ANDROID_BUILD_TOP/##g`
+    PROJECT=$(pwd -P | sed -e "s#$ANDROID_BUILD_TOP\/##; s#-caf.*##; s#\/default##")
     if (echo $PROJECT | grep -qv "^device")
     then
         PFX="platform/"
