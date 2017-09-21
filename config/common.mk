@@ -32,9 +32,9 @@ PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/du/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# Init files
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/init.local.rc:system/etc/init/dirtyunicorns.rc
+# Copy all Lineage-specific init rc files
+$(foreach f,$(wildcard vendor/du/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
