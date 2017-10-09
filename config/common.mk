@@ -20,7 +20,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     ro.setupwizard.rotation_locked=true \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    persist.sys.disable_rescue=true
 
 # SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
