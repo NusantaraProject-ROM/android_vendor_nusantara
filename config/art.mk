@@ -36,8 +36,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Dexopt filters
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     pm.dexopt.install=speed-profile \
-    pm.dexopt.bg-dexopt=speed-profile \
-    pm.dexopt.ab-ota=speed-profile \
+    pm.dexopt.bg-dexopt=speed \
+    pm.dexopt.ab-ota=speed \
     pm.dexopt.inactive=verify \
     pm.dexopt.shared=speed
 
