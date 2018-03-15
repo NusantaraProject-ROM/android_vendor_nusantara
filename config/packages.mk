@@ -29,3 +29,7 @@ PRODUCT_PACKAGES += \
 # Integrates package for easier Google Pay fixing
 PRODUCT_PACKAGES += \
     sqlite3
+
+# Fonts
+PRODUCT_PACKAGES += \
+    Nusantara-Fonts
