@@ -60,7 +60,7 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_RST}"                    Build completed! Now flash that shit and ENJOY!                    "${CL_RST}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RED}"======================================================================================="${CL_RED}
-	@echo -e ${CL_RST}""Package Complete: "$(DU_VERSION)"${CL_RST}
+	@echo -e ${CL_RST}""Package Complete: "$(INTERNAL_BACON_TARGET)"${CL_RST}
 	@echo -e ${CL_RED}"======================================================================================="${CL_RED}
 	@echo -e ${CL_RST}"Be yourself. Unless you can be a unicorn, in that case, you should always be a unicorn."${CL_RST}
 
