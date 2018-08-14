@@ -73,5 +73,8 @@ include vendor/du/config/branding.mk
 # Themes
 include vendor/themes/common.mk
 
+# Art
+include vendor/du/config/art.mk
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/du/overlay/common
