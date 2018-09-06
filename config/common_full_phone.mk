@@ -2,8 +2,8 @@
 $(call inherit-product, vendor/du/config/common.mk)
 
 # World APN list
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+PRODUCT_PACKAGES += \
+    apns-conf.xml
 
 # World SPN overrides list
 PRODUCT_COPY_FILES += \
