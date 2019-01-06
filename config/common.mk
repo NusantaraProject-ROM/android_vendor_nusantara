@@ -48,6 +48,10 @@ PRODUCT_COPY_FILES += \
 #    vendor/du/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
 #    vendor/du/prebuilt/common/etc/default-permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default-permissions/org.pixelexperience.weather.client.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml
+
 # Packages
 include vendor/du/config/packages.mk
 
