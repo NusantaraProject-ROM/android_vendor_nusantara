@@ -3,4 +3,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     CustomDoze \
-    ThemePicker
+    ThemePicker \
+    OmniStyle
+
