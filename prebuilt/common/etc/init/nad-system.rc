@@ -15,8 +15,7 @@ on post-fs-data
     chown system system /sys/class/power_supply/battery/input_suspend
 
 # bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
+service bugreport /system/bin/dumpstate -d -p -z
     oneshot
     disabled
     keycodes 114 115 116
