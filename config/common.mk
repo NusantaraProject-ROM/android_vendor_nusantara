@@ -61,7 +61,8 @@ PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-du-product.xml \
     vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-du-system.xml \
     vendor/du/prebuilt/common/etc/permissions/privapp-permissions-google-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-google-product.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-google-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google-system.xml
+    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-google-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google-system.xml \
+    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
