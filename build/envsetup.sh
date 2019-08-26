@@ -16,3 +16,35 @@ function mka() {
             ;;
     esac
 }
+
+function breakfast()
+{
+    target=$1
+    DU_DEVICES_ONLY="true"
+    unset LUNCH_MENU_CHOICES
+    add_lunch_combo full-eng
+    for f in `/bin/ls vendor/du/vendorsetup.sh 2> /dev/null`
+        do
+            echo "including $f"
+            . $f
+        done
+    unset f
+
+    if [ $# -eq 0 ]; then
+        # No arguments, so let's have the full menu
+        echo "Nothing to eat for breakfast?"
+        lunch
+    else
+        echo "z$target" | grep -q "-"
+        if [ $? -eq 0 ]; then
+            # A buildtype was specified, assume a full device name
+            lunch $target
+        else
+            # This is probably just the DU model name
+            lunch durex_$target-userdebug
+        fi
+    fi
+    return $?
+}
+
+alias bib=breakfast
