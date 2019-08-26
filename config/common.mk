@@ -42,9 +42,9 @@ PRODUCT_COPY_FILES += \
 
 # Backup tool
 PRODUCT_COPY_FILES += \
-    vendor/extras/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/extras/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/extras/build/tools/50-du.sh:system/addon.d/50-du.sh
+    vendor/du/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/du/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/du/build/tools/50-du.sh:system/addon.d/50-du.sh
 
 # Weather client
 #PRODUCT_COPY_FILES += \
