@@ -15,6 +15,15 @@
 # -----------------------------------------------------------------
 # Bacon update package
 
+#
+# Build system colors
+#
+# PFX: Prefix "target C++:" in yellow
+# INS: Module "Install:" output color (cyan for ics)
+ifneq ($(BUILD_WITH_COLORS),0)
+    include $(TOP_DIR)vendor/du/build/core/colors.mk
+endif
+
 ifeq ($(TARGET_BACON_NAME),)
     INTERNAL_BACON_NAME := $(TARGET_PRODUCT)-$(PLATFORM_VERSION)-$(shell date -u +%Y%m%d)
 else
@@ -27,4 +36,31 @@ INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(INTERNAL_BACON_NAME).zip
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
 	$(hide) $(MD5SUM) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
-	@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
+	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
+
+	@echo  ${CL_RED}""${CL_RED}
+	@echo -e ${CL_RED}".......................########..####.########..########.##....##......................"${CL_RED}
+	@echo -e ${CL_RED}".......................##.....##..##..##.....##....##.....##..##......................."${CL_RED}
+	@echo -e ${CL_RED}".......................##.....##..##..##.....##....##......####........................"${CL_RED}
+	@echo -e ${CL_RED}".......................##.....##..##..########.....##.......##........................."${CL_RED}
+	@echo -e ${CL_RED}".......................##.....##..##..##...##......##.......##........................."${CL_RED}
+	@echo -e ${CL_RED}".......................##.....##..##..##....##.....##.......##........................."${CL_RED}
+	@echo -e ${CL_RED}".......................########..####.##.....##....##.......##........................."${CL_RED}
+	@echo -e ${CL_RED}"......................................................................................."${CL_RED}
+	@echo -e ${CL_RED}"......................................................................................."${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.##....##.####..######...#######..########..##....##..######........."${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.###...##..##..##....##.##.....##.##.....##.###...##.##....##........"${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.####..##..##..##.......##.....##.##.....##.####..##.##.............."${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.##.##.##..##..##.......##.....##.########..##.##.##..######........."${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.##..####..##..##.......##.....##.##...##...##..####.......##........"${CL_RED}
+	@echo -e ${CL_RED}".........##.....##.##...###..##..##....##.##.....##.##....##..##...###.##....##........"${CL_RED}
+	@echo -e ${CL_RED}"..........#######..##....##.####..######...#######..##.....##.##....##..######........."${CL_RED}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RST}"                    Build completed! Now flash that shit and ENJOY!                    "${CL_RST}
+	@echo -e ${CL_RST}""${CL_RST}
+	@echo -e ${CL_RED}"======================================================================================="${CL_RED}
+	@echo -e ${CL_RST}""Package Complete: "$(DU_VERSION)"${CL_RST}
+	@echo -e ${CL_RED}"======================================================================================="${CL_RED}
+	@echo -e ${CL_RST}"Be yourself. Unless you can be a unicorn, in that case, you should always be a unicorn."${CL_RST}
+
