@@ -4,6 +4,7 @@ Additional functions:
 - mka:             Builds using SCHED_BATCH on all processors.
 - pushboot:	   Push a file from your OUT dir to your phone
                    and reboots it, using absolute path.
+- repopick:        Utility to fetch changes from Gerrit.
 EOF
 }
 
@@ -76,4 +77,10 @@ function pushboot() {
 
     adb push $OUT/$* /$*
     adb reboot
+}
+
+function repopick() {
+    set_stuff_for_environment
+    T=$(gettop)
+    $T/vendor/du/build/repopick.py $@
 }
