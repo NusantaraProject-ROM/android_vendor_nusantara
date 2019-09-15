@@ -28,25 +28,25 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
-# Copy all Lineage-specific init rc files
+# Copy all custom init rc files
 $(foreach f,$(wildcard vendor/du/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+    $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/mkshrc:system/etc/mkshrc
+    vendor/du/prebuilt/common/etc/mkshrc:$(TARGET_COPY_OUT_SYSTEM)/etc/mkshrc
 
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/du/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/du/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/du/build/tools/50-du.sh:system/addon.d/50-du.sh \
-    vendor/du/build/tools/blacklist:system/addon.d/blacklist
+    vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh \
+    vendor/du/build/tools/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
 # Weather client
 #PRODUCT_COPY_FILES += \
-#    vendor/du/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-#    vendor/du/prebuilt/common/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+#    vendor/du/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
+#    vendor/du/prebuilt/common/etc/default-permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default-permissions/org.pixelexperience.weather.client.xml
 
 # Packages
 include vendor/du/config/packages.mk
