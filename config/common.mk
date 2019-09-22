@@ -79,6 +79,9 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
+# Enable ccache
+USE_CCACHE := true
+
 # Extra tools
 PRODUCT_PACKAGES += \
     e2fsck \
