@@ -5,5 +5,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     CustomDoze \
     OmniStyle \
-    messaging
+    messaging \
+    WallpaperPicker2
 
