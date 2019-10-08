@@ -32,14 +32,7 @@ PRODUCT_CFI_INCLUDE_PATHS += \
 else
 
 $(call project-set-path,qcom-audio,hardware/qcom/audio/default)
-
-# Allow a device to manually override display hal
-ifneq ($(FORCE_QCOM_DISPLAY_HAL_VARIANT),)
-$(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(FORCE_QCOM_DISPLAY_HAL_VARIANT))
-else
 $(call project-set-path,qcom-display,hardware/qcom/display/$(TARGET_BOARD_PLATFORM))
-endif
-
 $(call project-set-path,qcom-media,hardware/qcom/media/$(TARGET_BOARD_PLATFORM))
 
 $(call project-set-path,qcom-bt-vendor,hardware/qcom/bt)
@@ -52,4 +45,3 @@ $(call project-set-path,qcom-dataservices,$(TARGET_DEVICE_DIR)/dataservices)
 $(call project-set-path,qcom-wlan,hardware/qcom/wlan)
 
 endif
-
