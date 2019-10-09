@@ -28,10 +28,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/du/prebuilt/common/bin/sysinit:system/bin/sysinit
-
 # Copy all Lineage-specific init rc files
 $(foreach f,$(wildcard vendor/du/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
