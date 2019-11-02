@@ -8,6 +8,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    adb_root
+endif
+
 # General additions
 PRODUCT_PRODUCT_PROPERTIES += \
     keyguard.no_require_sim=true \
