@@ -26,6 +26,19 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.setupwizard.rotation_locked=true \
     ro.build.selinux=1
 
+# SetupWizard
+PRODUCT_PRODUCT_PROPERTIES += \
+    setupwizard.enable_assist_gesture_training=true \
+    setupwizard.feature.baseline_setupwizard_enabled=true \
+    setupwizard.feature.show_pixel_tos=true \
+    setupwizard.feature.show_support_link_in_deferred_setup=false \
+    setupwizard.theme=glif_v3_light
+
+# IME
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.ime.bs_theme=true \
+    ro.com.google.ime.theme_id=5
+
 # Allow tethering without provisioning app
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
