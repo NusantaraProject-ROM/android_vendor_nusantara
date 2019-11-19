@@ -40,7 +40,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/du/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/du/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/du/build/tools/50-du.sh:system/addon.d/50-du.sh
+    vendor/du/build/tools/50-du.sh:system/addon.d/50-du.sh \
+    vendor/du/build/tools/blacklist:system/addon.d/blacklist
 
 # Weather client
 #PRODUCT_COPY_FILES += \
