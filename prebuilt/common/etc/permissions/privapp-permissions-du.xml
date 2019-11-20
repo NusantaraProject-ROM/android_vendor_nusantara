@@ -32,15 +32,25 @@
         <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     </privapp-permissions>
 
-    <privapp-permissions package="com.android.launcher3">
-        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
-        <permission name="android.permission.STATUS_BAR"/>
-        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
-        <permission name="android.permission.MANAGE_USERS"/>
+    <privapp-permissions package="com.google.android.apps.nexuslauncher">
+        <permission name="android.permission.BIND_APPWIDGET"/>
+        <permission name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.custom.ambient.display">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.google.android.apps.safetyhub">
+        <permission name="android.permission.CALL_PRIVILEGED"/>
+        <permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
+        <permission name="android.permission.LOCATION_HARDWARE"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.RECEIVE_EMERGENCY_BROADCAST"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
     </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
@@ -54,9 +64,20 @@
         <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
     </privapp-permissions>
 
-    <privapp-permissions package="com.android.customization">
+    <privapp-permissions package="com.google.android.settings.intelligence">
+        <permission name="android.permission.MANAGE_FINGERPRINT"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_DEVICE_CONFIG"/>
+        <permission name="android.permission.READ_SEARCH_INDEXABLES"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.WRITE_DEVICE_CONFIG"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
-        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.WRITE_SETTINGS_HOMEPAGE_DATA"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.wallpaper">
         <permission name="android.permission.CHANGE_OVERLAY_PACKAGES"/>
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 </permissions>
