@@ -1,8 +1,8 @@
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
 else
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
@@ -12,7 +12,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # General additions
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
@@ -27,7 +27,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.build.selinux=1
 
 # Allow tethering without provisioning app
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
 
 # Copy all custom init rc files
@@ -56,6 +56,34 @@ PRODUCT_COPY_FILES += \
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+# Extra tools
+PRODUCT_PACKAGES += \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs \
+    7z \
+    bash \
+    bzip2 \
+    curl \
+    lib7z \
+    powertop \
+    pigz \
+    tinymix \
+    unrar \
+    unzip \
+    vim \
+    rsync \
+    zip
 
 # Packages
 include vendor/du/config/packages.mk
