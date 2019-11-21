@@ -15,5 +15,3 @@
 
 # Rules for QCOM targets
 include $(TOPDIR)vendor/du/build/core/qcom_target.mk
-
-BUILD_RRO_SYSTEM_PACKAGE := $(TOP)/vendor/du/build/core/system_rro.mk
