@@ -45,18 +45,14 @@ PRODUCT_COPY_FILES += \
     vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh \
     vendor/du/build/tools/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
-# Weather client
-#PRODUCT_COPY_FILES += \
-#    vendor/du/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
-#    vendor/du/prebuilt/common/etc/default-permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default-permissions/org.pixelexperience.weather.client.xml
-
 # system mount
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
 
-# Power whitelist
+# Permission
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml
+    vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml \
+    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-du.xml
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
