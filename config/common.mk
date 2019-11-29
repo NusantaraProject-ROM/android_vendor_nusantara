@@ -65,7 +65,8 @@ PRODUCT_COPY_FILES += \
 # Permission
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-du.xml
+    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-du-product.xml \
+    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-du-system.xml
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
