@@ -22,9 +22,6 @@ type Product_variables struct {
 		Cflags []string
 		Srcs []string
 	}
-	Needs_netd_direct_connect_rule struct {
-		Cflags []string
-	}
 	Needs_text_relocations struct {
 		Cppflags []string
 	}
@@ -72,7 +69,6 @@ type ProductVariables struct {
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
 	Needs_camera_boottime_timestamp  *bool `json:",omitempty"`
-	Needs_netd_direct_connect_rule  *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Should_wait_for_qsee  *bool `json:",omitempty"`
 	Specific_camera_parameter_library  *string `json:",omitempty"`
