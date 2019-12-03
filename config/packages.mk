@@ -1,5 +1,6 @@
 # Packages
 PRODUCT_PACKAGES += \
-    WallpaperPicker2 \
+    LiveWallpapers \
+    LiveWallpapersPicker \
     CustomDoze \
     ThemePicker
