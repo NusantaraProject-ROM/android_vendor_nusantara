@@ -90,6 +90,9 @@ include vendor/nusantara/config/art.mk
 # Branding
 include vendor/nusantara/config/branding.mk
 
+# Charging animation
+include vendor/nusantara/config/charger.mk
+
 # Packages
 include vendor/nusantara/config/packages.mk
 
