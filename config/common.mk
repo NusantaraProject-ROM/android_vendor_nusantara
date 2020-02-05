@@ -48,8 +48,7 @@ $(foreach f,$(wildcard vendor/du/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES += \
     vendor/du/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/du/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh \
-    vendor/du/build/tools/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
+    vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh
 
 # Permission
 PRODUCT_COPY_FILES += \
