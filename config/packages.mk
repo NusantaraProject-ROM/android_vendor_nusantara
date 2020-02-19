@@ -6,8 +6,7 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     OmniStyle \
     messaging \
-    WallpaperPicker2 \
-    Recorder
+    WallpaperPicker2
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
