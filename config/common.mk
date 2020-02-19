@@ -118,6 +118,9 @@ include vendor/du/config/branding.mk
 # Themes
 include vendor/themes/common.mk
 
+# Art
+include vendor/du/config/art.mk
+
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/du/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/du/overlay/common
