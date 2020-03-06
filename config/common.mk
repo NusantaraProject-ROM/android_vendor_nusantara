@@ -51,10 +51,6 @@ PRODUCT_COPY_FILES += \
     vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh \
     vendor/du/build/tools/blacklist:$(TARGET_COPY_OUT_SYSTEM)/addon.d/blacklist
 
-# system mount
-PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
-
 # Permission
 PRODUCT_COPY_FILES += \
     vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml \
