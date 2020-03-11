@@ -81,6 +81,10 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Enable ccache
 USE_CCACHE := true
 
+# Live Display
+PRODUCT_COPY_FILES += \
+    vendor/nusantara/config/permissions/privapp-permissions-livedisplay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-livedisplay.xml
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
