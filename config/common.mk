@@ -6,11 +6,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-# Conditionally build in su
-ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PACKAGES += \
     adb_root
-endif
 
 # General additions
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
