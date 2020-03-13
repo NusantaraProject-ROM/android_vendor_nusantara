@@ -9,13 +9,13 @@ USE_DEX2OAT_DEBUG := false
 # Dex pre-opt
 WITH_DEXPREOPT := true
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-PRODUCT_DEX_PREOPT_PROFILE_DIR := vendor/dexopt_profiles
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed-profile
 
-# Speed apps
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-  SystemUI \
-  Settings
+# Optimize everything for preopt
+PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
+
+# Use default filter for problematic apps
+PRODUCT_DEXPREOPT_QUICKEN_APPS += \
+    Dialer
 
 # Dexopt boot types
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
