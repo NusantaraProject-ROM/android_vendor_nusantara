@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     TouchGestures \
     StitchImage \
+    StitchImageService \
     WallpaperCropper2 \
     SimpleDeviceConfig
 
