@@ -22,7 +22,14 @@
         <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
     </privapp-permissions>
 
+    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
+    <privapp-permissions package="com.android.launcher3">
+        <permission name="android.permission.MANAGE_ACTIVITY_STACKS"/>
+        <permission name="android.permission.STATUS_BAR"/>
+    </privapp-permissions>
+
     <privapp-permissions package="com.android.systemui">
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
         <permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.SHUTDOWN"/>
@@ -33,6 +40,7 @@
         <permission name="android.permission.RECORD_AUDIO"/>
         <permission name="android.permission.WRITE_APN_SETTINGS"/>
         <permission name="android.permission.WRITE_SYNC_SETTINGS"/>
+        <permission name="android.permission.LOCATION_HARDWARE"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.oneplus.screenrecord">
@@ -41,5 +49,11 @@
         <permission name="android.permission.RECORD_AUDIO"/>
         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.wallpaper">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.CHANGE_OVERLAY_PACKAGES"/>
     </privapp-permissions>
 </permissions>
