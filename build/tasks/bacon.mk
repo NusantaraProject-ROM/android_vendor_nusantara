@@ -24,13 +24,7 @@ ifneq ($(BUILD_WITH_COLORS),0)
     include $(TOP_DIR)vendor/du/build/core/colors.mk
 endif
 
-ifeq ($(TARGET_BACON_NAME),)
-    INTERNAL_BACON_NAME := $(TARGET_PRODUCT)-$(PLATFORM_VERSION)-$(shell date -u +%Y%m%d)
-else
-    INTERNAL_BACON_NAME := $(TARGET_BACON_NAME)
-endif
-
-INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(INTERNAL_BACON_NAME).zip
+INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(DU_VERSION).zip
 
 .PHONY: corvus
 corvus: $(INTERNAL_OTA_PACKAGE_TARGET)
