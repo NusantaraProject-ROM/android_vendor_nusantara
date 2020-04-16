@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- IP address of the dns server to use if nobody else suggests one -->
-    <string name="config_default_dns_server" translatable="false">1.0.0.1</string>
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
 
-    <!-- The duration (in milliseconds) of a short animation. -->
-    <integer name="config_shortAnimTime">100</integer>
-
-    <!-- The duration (in milliseconds) of a medium-length animation. -->
-    <integer name="config_mediumAnimTime">200</integer>
-
-    <!-- The duration (in milliseconds) of a long animation. -->
-    <integer name="config_longAnimTime">250</integer>
-
-    <!-- The duration (in milliseconds) of the activity open/close and fragment open/close animations. -->
-    <integer name="config_activityShortDur">75</integer>
-    <integer name="config_activityDefaultDur">110</integer>
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google provider -->
@@ -28,23 +18,12 @@
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
-    <bool name="config_setColorTransformAccelerated">false</bool>
-
-    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-         in hardware for individual layers. -->
-    <bool name="config_setColorTransformAcceleratedPerLayer">false</bool>
+    <bool name="config_setColorTransformAccelerated">true</bool>
 
     <!-- Control whether Night display is available. This should only be enabled on devices
          that have a HWC implementation that can apply the matrix passed to setColorTransform
          without impacting power, performance, and app compatibility (e.g. protected content). -->
     <bool name="config_nightDisplayAvailable">true</bool>
-
-    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
-    <integer name="config_nightDisplayColorTemperatureMin">1600</integer>
-
-    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
-         activated. -->
-    <integer name="config_nightDisplayColorTemperatureDefault">2650</integer>
 
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
@@ -79,13 +58,10 @@
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
-    <!-- The duration in which a recent task is considered in session and should be visible. -->
-    <integer name="config_activeTaskDurationHours">12</integer>
-
     <!-- Whether device supports an alt. ambient display -->
     <bool name="config_alt_ambient_display">true</bool>
 
-    <!-- Amount of time in ms the user needs to press the relevant keys to trigger the
-         screenshot chord -->
-    <integer name="config_screenshotChordKeyTimeout">0</integer>
+    <!-- If this is true, long press on power button will be available from a
+         non-interactive state. -->
+    <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>
 </resources>
