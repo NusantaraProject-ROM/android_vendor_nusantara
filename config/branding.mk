@@ -25,3 +25,6 @@ NAD_PROPERTIES := \
     ro.nad.build_codename=$(NAD_BUILD_CODENAME) \
     ro.nad.fingerprint=$(ROM_FINGERPRINT) \
     ro.nad.ota.version_code=$(NAD_OTA_BRANCH)
+
+# Var definition for jenkins script
+$(info) $(shell echo $(NAD_VERSION) > $(OUT_DIR)/var-file_name)
