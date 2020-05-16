@@ -59,7 +59,6 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-
 # Art
 include vendor/du/config/art.mk
 
@@ -75,3 +74,5 @@ include vendor/themes/common.mk
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/du/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/du/overlay/common
+
+$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
