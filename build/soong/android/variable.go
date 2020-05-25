@@ -81,6 +81,10 @@ type Product_variables struct {
 		Cppflags []string
 		Shared_libs []string
 	}
+	Qcom_um_soong_namespace struct {
+		Cflags []string
+		Header_libs []string
+	}
 }
 
 type ProductVariables struct {
@@ -88,6 +92,7 @@ type ProductVariables struct {
 	Apply_msm8974_1440p_egl_workaround  *bool `json:",omitempty"`
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
+	Qcom_um_soong_namespace  *string `json:",omitempty"`
 	Needs_camera_boottime_timestamp  *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Should_wait_for_qsee  *bool `json:",omitempty"`
