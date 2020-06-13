@@ -25,3 +25,5 @@ PRODUCT_PACKAGES += \
 # Integrates package for easier Google Pay fixing
 PRODUCT_PACKAGES += \
     sqlite3
+
+-include packages/apps/Plugins/plugins.mk
