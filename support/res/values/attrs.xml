@@ -27,6 +27,8 @@
     <declare-styleable name="ColorPickerPreference">
         <attr name="ledPreview" format="boolean" />
         <attr name="alphaSlider" format="boolean" />
+        <attr name="showPreview" format="boolean" />
+        <attr name="showReset" format="boolean" />
     </declare-styleable>
 
     <!-- Base attributes available to CircularImageView -->
