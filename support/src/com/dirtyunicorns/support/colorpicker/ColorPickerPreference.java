@@ -66,7 +66,8 @@ public class ColorPickerPreference extends Preference implements
     private boolean mShowReset;
     private boolean mShowPreview;
     private boolean mShowLedPreview;
-
+    private boolean mDividerAbove;
+    private boolean mDividerBelow;
     private EditText mEditText;
 
     public ColorPickerPreference(Context context) {
@@ -110,6 +111,8 @@ public class ColorPickerPreference extends Preference implements
             mAlphaSliderEnabled = attrs.getAttributeBooleanValue(null, "alphaSlider", false);
             mShowReset = attrs.getAttributeBooleanValue(SETTINGS_NS, "showReset", false);
             mShowPreview = attrs.getAttributeBooleanValue(SETTINGS_NS, "showPreview", true);
+            mDividerAbove = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerAbove", false);
+            mDividerBelow = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerBelow", false);
             int defVal = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", DEF_VALUE_DEFAULT);
             if (defVal != DEF_VALUE_DEFAULT) {
                 mUsesDefaultButton =  true;
@@ -123,6 +126,8 @@ public class ColorPickerPreference extends Preference implements
     public void onBindViewHolder(PreferenceViewHolder view) {
         mView = view;
         super.onBindViewHolder(view);
+        view.setDividerAllowedAbove(mDividerAbove);
+        view.setDividerAllowedBelow(mDividerBelow);
 
         view.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
