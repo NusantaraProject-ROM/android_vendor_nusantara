@@ -109,7 +109,7 @@ public class ColorPickerPreference extends Preference implements
         setOnPreferenceClickListener(this);
         if (attrs != null) {
             mAlphaSliderEnabled = attrs.getAttributeBooleanValue(null, "alphaSlider", false);
-            mShowReset = attrs.getAttributeBooleanValue(SETTINGS_NS, "showReset", false);
+            mShowReset = attrs.getAttributeBooleanValue(SETTINGS_NS, "showReset", true);
             mShowPreview = attrs.getAttributeBooleanValue(SETTINGS_NS, "showPreview", true);
             mDividerAbove = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerAbove", false);
             mDividerBelow = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerBelow", false);
@@ -161,9 +161,11 @@ public class ColorPickerPreference extends Preference implements
         if (widgetFrameView == null)
             return;
 
-        ImageView defView = new ImageView(getContext());
         widgetFrameView.setOrientation(LinearLayout.HORIZONTAL);
 
+        if (!isEnabled()) return;
+
+        ImageView defView = new ImageView(getContext());
         // remove already created default button
         int count = widgetFrameView.getChildCount();
         if (count > 0) {
@@ -205,7 +207,6 @@ public class ColorPickerPreference extends Preference implements
         if (!mShowPreview || mView == null)
             return;
 
-        ImageView iView = new ImageView(getContext());
         LinearLayout widgetFrameView = ((LinearLayout) mView
                 .findViewById(android.R.id.widget_frame));
         if (widgetFrameView == null)
@@ -226,6 +227,10 @@ public class ColorPickerPreference extends Preference implements
                 widgetFrameView.removeView(preview);
             }
         }
+
+        if (!isEnabled()) return;
+
+        ImageView iView = new ImageView(getContext());
         widgetFrameView.addView(iView);
         widgetFrameView.setMinimumWidth(0);
         final int size = (int) getContext().getResources().getDimension(R.dimen.oval_notification_size);
@@ -249,6 +254,13 @@ public class ColorPickerPreference extends Preference implements
         if (mEnabled != enabled) {
             mEnabled = enabled;
         }*/
+    }
+
+    @Override
+    public void setEnabled (boolean enabled) {
+        super.setEnabled(enabled);
+        setPreviewColor();
+        setDefaultButton();
     }
 
     @Override
