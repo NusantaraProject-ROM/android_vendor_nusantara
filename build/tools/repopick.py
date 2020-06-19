@@ -238,7 +238,7 @@ if __name__ == '__main__':
 
     for project in projects:
         name = project.get('name').replace("Corvus-ROM/", "")
-        path = project.get('path')
+        path = project.get('path', name)
         revision = project.get('revision')
         if revision is None:
             for remote in remotes:
