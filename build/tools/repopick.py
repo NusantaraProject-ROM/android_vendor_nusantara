@@ -143,7 +143,7 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to Gerrit
-    default_gerrit = 'https://gerrit.dirtyunicorns.com'
+    default_gerrit = 'https://review.corvusrom.xyz'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
@@ -237,7 +237,7 @@ if __name__ == '__main__':
     #{project: {path, revision}}
 
     for project in projects:
-        name = project.get('name').replace("DirtyUnicorns/", "")
+        name = project.get('name').replace("Corvus-ROM/", "")
         path = project.get('path')
         revision = project.get('revision')
         if revision is None:
@@ -300,7 +300,7 @@ if __name__ == '__main__':
 
         mergables.append({
             'subject': review['subject'],
-            'project': review['project'],
+            'project': review['project'].split('/')[1],
             'branch': review['branch'],
             'change_id': review['change_id'],
             'change_number': review['number'],
@@ -387,9 +387,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit github', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit xtended', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch github', item['fetch'][method]['ref']]
+                cmd = ['git fetch xtended', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:
