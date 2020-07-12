@@ -1,6 +1,5 @@
 # LineageOS core functionality
 on init
-    export ANDROID_CACHE /cache
     export TERMINFO /system/etc/terminfo
 
 on post-fs-data
@@ -14,10 +13,6 @@ on post-fs-data
     chown system system /sys/class/power_supply/battery/battery_charging_enabled
     chown system system /sys/class/power_supply/battery/charging_enabled
     chown system system /sys/class/power_supply/battery/input_suspend
-
-on boot
-    # Persistent properties (only created if persist exists)
-    mkdir /persist/properties 0770 system system
 
 on property:sys.boot_completed=1
     # Restrict permissions to socket file
