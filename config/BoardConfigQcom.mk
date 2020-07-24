@@ -1,4 +1,4 @@
-include vendor/du/config/BoardConfigQcomDefs.mk
+include vendor/nusantara/config/BoardConfigQcomDefs.mk
 
 BOARD_USES_ADRENO := true
 

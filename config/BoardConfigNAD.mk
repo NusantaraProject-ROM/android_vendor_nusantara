@@ -1,8 +1,8 @@
-include vendor/du/config/BoardConfigKernel.mk
-include vendor/du/config/BoardConfigSoong.mk
+include vendor/nusantara/config/BoardConfigKernel.mk
+include vendor/nusantara/config/BoardConfigSoong.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/du/config/BoardConfigQcom.mk
+include vendor/nusantara/config/BoardConfigQcom.mk
 endif
 
 ifneq ($(TARGET_USES_PREBUILT_CAMERA_SERVICE), true)

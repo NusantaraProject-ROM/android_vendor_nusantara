@@ -21,25 +21,17 @@
 # PFX: Prefix "target C++:" in yellow
 # INS: Module "Install:" output color (cyan for ics)
 ifneq ($(BUILD_WITH_COLORS),0)
-    include $(TOP_DIR)vendor/du/build/core/colors.mk
+    include $(TOP_DIR)vendor/nusantara/build/core/colors.mk
 endif
 
-INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(DU_VERSION).zip
+INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(NAD_VERSION).zip
 
-.PHONY: corvus
-corvus: $(INTERNAL_OTA_PACKAGE_TARGET)
+.PHONY: nad
+nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
 	$(hide) $(MD5SUM) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
 	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
 
-	@echo  ${CL_MAG}""${CL_MAG}
-	@echo -e ${CL_MAG}"...............#######..######..######.##...........##.##.....##..######............"${CL_MAG}
-	@echo -e ${CL_MAG}"..............##.......##....##.##...##.##.........##..##.....##.##....##..........."${CL_MAG}
-	@echo -e ${CL_MAG}"..............##.......##....##.##...##..##.......##...##.....##.##................."${CL_MAG}
-	@echo -e ${CL_MAG}"..............##.......##....##.######....##.....##....##.....##..######............"${CL_MAG}
-	@echo -e ${CL_MAG}"..............##.......##....##.##..##.....##...##.....##.....##.......##..........."${CL_MAG}
-	@echo -e ${CL_MAG}"..............##.......##....##.##...##.....##.##......##.....##.##....##..........."${CL_MAG}
-	@echo -e ${CL_MAG}"...............#######..######..##....##.....###........#######...######............"${CL_MAG}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}"                    Build completed! Now flash that shit and ENJOY!                    "${CL_RST}

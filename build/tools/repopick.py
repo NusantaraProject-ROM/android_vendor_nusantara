@@ -237,7 +237,7 @@ if __name__ == '__main__':
     #{project: {path, revision}}
 
     for project in projects:
-        name = project.get('name').replace("Corvus-ROM/", "")
+        name = project.get('name').replace("Nusantara-OS/", "")
         path = project.get('path', name)
         revision = project.get('revision')
         if revision is None:
@@ -387,9 +387,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit xtended', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit nusantara', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch xtended', item['fetch'][method]['ref']]
+                cmd = ['git fetch nusantara', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:

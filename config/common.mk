@@ -44,22 +44,21 @@ include vendor/pixelgapps/pixel-gapps.mk
 endif
 
 # Copy all custom init rc files
-$(foreach f,$(wildcard vendor/du/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/nusantara/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Backup tool
 PRODUCT_COPY_FILES += \
-    vendor/du/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/du/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/du/build/tools/50-du.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-du.sh
+    vendor/nusantara/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/nusantara/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/nusantara/build/tools/50-nad.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-nad.sh
 
 # Permission
 PRODUCT_COPY_FILES += \
-    vendor/du/prebuilt/common/etc/permissions/du-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/du-power-whitelist.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-du-system.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-du-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-du-product.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
-    vendor/du/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
+    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-nad-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-du-system.xml \
+    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-nad-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nad-product.xml \
+    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
+    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 
 # Disable vendor restrictions
@@ -83,19 +82,19 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Art
-include vendor/du/config/art.mk
+include vendor/nusantara/config/art.mk
 
 # Branding
-include vendor/du/config/branding.mk
+include vendor/nusantara/config/branding.mk
 
 # Packages
-include vendor/du/config/packages.mk
+include vendor/nusantara/config/packages.mk
 
 # Themes
 include vendor/themes/common.mk
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/du/overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/du/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay
+DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay/common
 
 $(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)

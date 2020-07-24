@@ -67,15 +67,15 @@ function setup_vendor() {
         exit 1
     fi
 
-    export DU_ROOT="$3"
-    if [ ! -d "$DU_ROOT" ]; then
-        echo "\$DU_ROOT must be set and valid before including this script!"
+    export NAD_ROOT="$3"
+    if [ ! -d "$NAD_ROOT" ]; then
+        echo "\$NAD_ROOT must be set and valid before including this script!"
         exit 1
     fi
 
     export OUTDIR=vendor/"$VENDOR"/"$DEVICE"
-    if [ ! -d "$DU_ROOT/$OUTDIR" ]; then
-        mkdir -p "$DU_ROOT/$OUTDIR"
+    if [ ! -d "$NAD_ROOT/$OUTDIR" ]; then
+        mkdir -p "$NAD_ROOT/$OUTDIR"
     fi
 
     VNDNAME="$6"
@@ -83,10 +83,10 @@ function setup_vendor() {
         VNDNAME="$DEVICE"
     fi
 
-    export PRODUCTMK="$DU_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
-    export ANDROIDBP="$DU_ROOT"/"$OUTDIR"/Android.bp
-    export ANDROIDMK="$DU_ROOT"/"$OUTDIR"/Android.mk
-    export BOARDMK="$DU_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
+    export PRODUCTMK="$NAD_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
+    export ANDROIDBP="$NAD_ROOT"/"$OUTDIR"/Android.bp
+    export ANDROIDMK="$NAD_ROOT"/"$OUTDIR"/Android.mk
+    export BOARDMK="$NAD_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
 
     if [ "$4" == "true" ] || [ "$4" == "1" ]; then
         COMMON=1
@@ -1189,7 +1189,7 @@ function get_file() {
 # Convert apk|jar .odex in the corresposing classes.dex
 #
 function oat2dex() {
-    local DU_TARGET="$1"
+    local NAD_TARGET="$1"
     local OEM_TARGET="$2"
     local SRC="$3"
     local TARGET=
@@ -1197,16 +1197,16 @@ function oat2dex() {
     local HOST="$(uname | tr '[:upper:]' '[:lower:]')"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$DU_ROOT"/prebuilts/tools-extras/common/smali/baksmali.jar
-        export SMALIJAR="$DU_ROOT"/prebuilts/tools-extras/common/smali/smali.jar
+        export BAKSMALIJAR="$NAD_ROOT"/prebuilts/tools-extras/common/smali/baksmali.jar
+        export SMALIJAR="$NAD_ROOT"/prebuilts/tools-extras/common/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$DU_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/vdexExtractor
+        export VDEXEXTRACTOR="$NAD_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$DU_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/compact_dex_converter
+        export CDEXCONVERTER="$NAD_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -1226,11 +1226,11 @@ function oat2dex() {
         FULLY_DEODEXED=1 && return 0 # system is fully deodexed, return
     fi
 
-    if [ ! -f "$DU_TARGET" ]; then
+    if [ ! -f "$NAD_TARGET" ]; then
         return;
     fi
 
-    if grep "classes.dex" "$DU_TARGET" >/dev/null; then
+    if grep "classes.dex" "$NAD_TARGET" >/dev/null; then
         return 0 # target apk|jar is already odexed, return
     fi
 
@@ -1258,7 +1258,7 @@ function oat2dex() {
                 java -jar "$BAKSMALIJAR" deodex -o "$TMPDIR/dexout" -b "$BOOTOAT" -d "$TMPDIR" "$TMPDIR/$(basename "$OAT")"
                 java -jar "$SMALIJAR" assemble "$TMPDIR/dexout" -o "$TMPDIR/classes.dex"
             fi
-        elif [[ "$DU_TARGET" =~ .jar$ ]]; then
+        elif [[ "$NAD_TARGET" =~ .jar$ ]]; then
             JAROAT="$TMPDIR/system/framework/$ARCH/boot-$(basename ${OEM_TARGET%.*}).oat"
             JARVDEX="/system/framework/boot-$(basename ${OEM_TARGET%.*}).vdex"
             if [ ! -f "$JAROAT" ]; then
@@ -1453,7 +1453,7 @@ function extract() {
     local FIXUP_HASHLIST=( ${PRODUCT_COPY_FILES_FIXUP_HASHES[@]} ${PRODUCT_PACKAGES_FIXUP_HASHES[@]} )
     local PRODUCT_COPY_FILES_COUNT=${#PRODUCT_COPY_FILES_LIST[@]}
     local COUNT=${#FILELIST[@]}
-    local OUTPUT_ROOT="$DU_ROOT"/"$OUTDIR"/proprietary
+    local OUTPUT_ROOT="$NAD_ROOT"/"$OUTDIR"/proprietary
     local OUTPUT_TMP="$TMPDIR"/"$OUTDIR"/proprietary
 
     if [ "$SRC" = "adb" ]; then
@@ -1490,7 +1490,7 @@ function extract() {
                 fi
                 if [ -a "$DUMPDIR"/"$PARTITION".new.dat ]; then
                     echo "Converting "$PARTITION".new.dat to "$PARTITION".img"
-                    python "$DU_ROOT"/vendor/du/build/tools/sdat2img.py "$DUMPDIR"/"$PARTITION".transfer.list "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION".img 2>&1
+                    python "$NAD_ROOT"/vendor/nusantara/build/tools/sdat2img.py "$DUMPDIR"/"$PARTITION".transfer.list "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION".img 2>&1
                     rm -rf "$DUMPDIR"/"$PARTITION".new.dat "$DUMPDIR"/"$PARTITION"
                     mkdir "$DUMPDIR"/"$PARTITION" "$DUMPDIR"/tmp
                     echo "Requesting sudo access to mount the "$PARTITION".img"
@@ -1668,7 +1668,7 @@ function extract_firmware() {
     local FILELIST=( ${PRODUCT_COPY_FILES_LIST[@]} )
     local COUNT=${#FILELIST[@]}
     local SRC="$2"
-    local OUTPUT_DIR="$DU_ROOT"/"$OUTDIR"/radio
+    local OUTPUT_DIR="$NAD_ROOT"/"$OUTDIR"/radio
 
     if [ "$VENDOR_RADIO_STATE" -eq "0" ]; then
         echo "Cleaning firmware output directory ($OUTPUT_DIR).."
