@@ -53,14 +53,6 @@ PRODUCT_COPY_FILES += \
     vendor/nusantara/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/nusantara/build/tools/50-nad.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-nad.sh
 
-# Permission
-PRODUCT_COPY_FILES += \
-    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-nad-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-du-system.xml \
-    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-nad-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-nad-product.xml \
-    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
-    vendor/nusantara/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
-
-
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
