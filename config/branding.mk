@@ -1,4 +1,5 @@
 NAD_VERSION_BASE := 1.0
+NAD_BUILD_CODENAME := ALOK
 NAD_BUILD_TYPE ?= UNOFFICIAL
 
 # Set all versions
@@ -20,4 +21,5 @@ NAD_PROPERTIES := \
     ro.nad.version=$(NAD_VERSION) \
     ro.nad.build.type=$(NAD_BUILD_TYPE) \
     ro.nad.build.version=$(NAD_VERSION_BASE) \
+    ro.nad.build_codename=$(NAD_BUILD_CODENAME) \
     ro.nad.fingerprint=$(ROM_FINGERPRINT)
