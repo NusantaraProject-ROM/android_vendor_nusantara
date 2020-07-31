@@ -30,6 +30,7 @@ INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(NAD_VERSION).zip
 nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
 	$(hide) $(MD5SUM) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
+	$(hide) ./vendor/nusantara/tools/generate_json_build_info.sh $(INTERNAL_BACON_TARGET)
 	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
 
 	@echo -e ${CL_RST}""${CL_RST}

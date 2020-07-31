@@ -1,6 +1,7 @@
 NAD_VERSION_BASE := 1.0
 NAD_BUILD_CODENAME := ALOK
 NAD_BUILD_TYPE ?= UNOFFICIAL
+NAD_OTA_BRANCH := 10
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
@@ -22,4 +23,5 @@ NAD_PROPERTIES := \
     ro.nad.build.type=$(NAD_BUILD_TYPE) \
     ro.nad.build.version=$(NAD_VERSION_BASE) \
     ro.nad.build_codename=$(NAD_BUILD_CODENAME) \
-    ro.nad.fingerprint=$(ROM_FINGERPRINT)
+    ro.nad.fingerprint=$(ROM_FINGERPRINT) \
+    ro.nad.ota.version_code=$(NAD_OTA_BRANCH)

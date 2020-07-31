@@ -1,3 +1,11 @@
+# OTA
+ifeq ($(NAD_BUILD_TYPE), OFFICIAL)
+
+PRODUCT_PACKAGES += \
+    Updater
+
+endif
+
 # Packages
 PRODUCT_PACKAGES += \
     DU-Themes \
