@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     CustomDoze \
     MatLog \
+    Gallery2 \
     OmniStyle \
     messaging \
     WallpaperPicker2 \
