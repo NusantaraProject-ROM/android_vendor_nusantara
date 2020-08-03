@@ -24,7 +24,7 @@ then
     echo "  \"donate_url\"     : \"https://www.paypal.me/username\"," >> $file_path.json
     echo "  \"maintainer\"     : \"\"," >> $file_path.json
     echo "  \"maintainer_url\" : \"https://github.com/\"," >> $file_path.json
-    echo "  \"forum_url\"      : \"https://t.me/NusantaraCommunity\"," >> $file_path.json
+    echo "  \"forum_url\"      : \"https://t.me/NusantaraCommunity\"" >> $file_path.json
     echo "}" >> $file_path.json
   fi
 fi
