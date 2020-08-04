@@ -45,7 +45,7 @@ custom_local_manifest = ".repo/local_manifests/local_nad.xml"
 custom_default_revision =  os.getenv('ROOMSERVICE_DEFAULT_BRANCH', '10')
 custom_dependencies = "nad.dependencies"
 org_manifest = "device"  # leave empty if org is provided in manifest
-org_display = "Nusantara-ROM"  # needed for displaying
+org_display = "NusantaraROM-devices"  # needed for displaying
 
 github_auth = None
 
