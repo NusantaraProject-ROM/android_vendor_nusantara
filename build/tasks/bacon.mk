@@ -33,11 +33,23 @@ nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ./vendor/nusantara/tools/generate_json_build_info.sh $(INTERNAL_BACON_TARGET)
 	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
 
+	@echo -e ${CL_RED}""${CL_RED}
+	@echo -e ${CL_RED}"      ___           ___           ___           ___           ___                       ___           ___           ___     "${CL_RED}
+	@echo -e ${CL_RED}"     /__/\         /__/\         /  /\         /  /\         /__/\          ___        /  /\         /  /\         /  /\    "${CL_RED}
+	@echo -e ${CL_RED}"     \  \:\        \  \:\       /  /:/_       /  /::\        \  \:\        /  /\      /  /::\       /  /::\       /  /::\   "${CL_RED}
+	@echo -e ${CL_RED}"      \  \:\        \  \:\     /  /:/ /\     /  /:/\:\        \  \:\      /  /:/     /  /:/\:\     /  /:/\:\     /  /:/\:\  "${CL_RED}
+	@echo -e ${CL_RED}"  _____\__\:\   ___  \  \:\   /  /:/ /::\   /  /:/~/::\   _____\__\:\    /  /:/     /  /:/~/::\   /  /:/~/:/    /  /:/~/::\ "${CL_RED}
+	@echo -e ${CL_RED}" /__/::::::::\ /__/\  \__\:\ /__/:/ /:/\:\ /__/:/ /:/\:\ /__/::::::::\  /  /::\    /__/:/ /:/\:\ /__/:/ /:/___ /__/:/ /:/\:\"${CL_RED}
+	@echo -e ${CL_RED}" \  \:\~~\~~\/ \  \:\ /  /:/ \  \:\/:/~/:/ \  \:\/:/__\/ \  \:\~~\~~\/ /__/:/\:\   \  \:\/:/__\/ \  \:\/:::::/ \  \:\/:/__\/"${CL_RED}
+	@echo -e ${CL_RED}"  \  \:\  ~~~   \  \:\  /:/   \  \::/ /:/   \  \::/       \  \:\  ~~~  \__\/  \:\   \  \::/       \  \::/~~~~   \  \::/     "${CL_RED}
+	@echo -e ${CL_RED}"   \  \:\        \  \:\/:/     \__\/ /:/     \  \:\        \  \:\           \  \:\   \  \:\        \  \:\        \  \:\     "${CL_RED}
+	@echo -e ${CL_RED}"    \  \:\        \  \::/        /__/:/       \  \:\        \  \:\           \__\/    \  \:\        \  \:\        \  \:\    "${CL_RED}
+	@echo -e ${CL_RED}"     \__\/         \__\/         \__\/         \__\/         \__\/                     \__\/         \__\/         \__\/    "${CL_RED}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_RST}"                    Build completed! Now flash that shit and ENJOY!                    "${CL_RST}
 	@echo -e ${CL_RST}""${CL_RST}
-	@echo -e ${CL_MAG}"======================================================================================="${CL_MAG}
-	@echo -e ${CL_RST}""Package Complete: "$(INTERNAL_BACON_TARGET)"${CL_RST}
-	@echo -e ${CL_MAG}"======================================================================================="${CL_MAG}
+	@echo -e ${CL_RED}"======================================================================================="${CL_CYN}
+	@echo -e ${CL_RST}" Package Complete: $(INTERNAL_BACON_TARGET)"${CL_RST}
+	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
 
