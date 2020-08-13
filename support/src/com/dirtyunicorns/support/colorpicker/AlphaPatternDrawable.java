@@ -44,7 +44,7 @@ public class AlphaPatternDrawable extends Drawable {
     /**
      * Bitmap in which the pattern will be cahched.
      */
-    private Bitmap        mBitmap;
+    private Bitmap mBitmap;
 
     public AlphaPatternDrawable(int rectangleSize) {
         mRectangleSize = rectangleSize;
