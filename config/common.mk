@@ -43,6 +43,12 @@ ifeq ($(USE_GAPPS),true)
 include vendor/pixelgapps/pixel-gapps.mk
 endif
 
+#MicroG
+ifeq ($(USE_MICROG),true)
+include prebuilts/prebuiltapks/microg.mk
+PRODUCT_PACKAGES += bromite-webview
+endif
+
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/nusantara/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
