@@ -25,11 +25,12 @@ ifneq ($(BUILD_WITH_COLORS),0)
 endif
 
 INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(NAD_VERSION).zip
+MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
 
 .PHONY: nad
 nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
-	$(hide) md5sum $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
+	$(hide) $(MD5) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
 	$(hide) ./vendor/nusantara/tools/generate_json_build_info.sh $(INTERNAL_BACON_TARGET)
 	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
 
