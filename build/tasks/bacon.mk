@@ -29,7 +29,7 @@ INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(NAD_VERSION).zip
 .PHONY: nad
 nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(INTERNAL_BACON_TARGET)
-	#$(hide) $(MD5SUM) $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
+	$(hide) md5sum $(INTERNAL_BACON_TARGET) | sed "s|$(PRODUCT_OUT)/||" > $(INTERNAL_BACON_TARGET).md5sum
 	$(hide) ./vendor/nusantara/tools/generate_json_build_info.sh $(INTERNAL_BACON_TARGET)
 	#@echo "Package Complete: $(INTERNAL_BACON_TARGET)" >&2
 
@@ -52,4 +52,3 @@ nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_RED}"======================================================================================="${CL_CYN}
 	@echo -e ${CL_RST}" Package Complete: $(INTERNAL_BACON_TARGET)"${CL_RST}
 	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
-
