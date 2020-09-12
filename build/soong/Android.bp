@@ -1,14 +1,14 @@
 bootstrap_go_package {
-    name: "soong-du",
-    pkgPath: "du/soong/android",
+    name: "soong-nad",
+    pkgPath: "nad/soong/android",
     srcs: [
         "android/variable.go",
     ],
 }
 
 bootstrap_go_package {
-    name: "soong-du-generator",
-    pkgPath: "du/soong/generator",
+    name: "soong-nad-generator",
+    pkgPath: "nad/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -23,7 +23,7 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-du_generator {
+nad_generator {
     name: "generated_kernel_includes",
 
     // The headers make command
