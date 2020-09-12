@@ -6,9 +6,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-PRODUCT_PACKAGES += \
-    adb_root
-
 # Additional props
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
@@ -37,17 +34,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
-
-# Gapps
-ifeq ($(USE_GAPPS),true)
-include vendor/pixelgapps/pixel-gapps.mk
-endif
-
-#MicroG
-ifeq ($(USE_MICROG),true)
-include prebuilts/prebuiltapks/microg.mk
-PRODUCT_PACKAGES += bromite-webview
-endif
 
 # Copy all custom init rc files
 $(foreach f,$(wildcard vendor/nusantara/prebuilt/common/etc/init/*.rc),\
@@ -91,7 +77,7 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Art
-include vendor/nusantara/config/art.mk
+#include vendor/nusantara/config/art.mk
 
 # Branding
 include vendor/nusantara/config/branding.mk
