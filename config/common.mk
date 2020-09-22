@@ -106,6 +106,9 @@ include vendor/nusantara/config/art.mk
 # Branding
 include vendor/nusantara/config/branding.mk
 
+# Build fingerprint
+include vendor/nusantara/config/fingerprint.mk
+
 # Packages
 include vendor/nusantara/config/packages.mk
 
