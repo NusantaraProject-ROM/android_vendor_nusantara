@@ -66,6 +66,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Enable ccache
 USE_CCACHE := true
+CCACHE_DIR := $ANDROID_BUILD_TOP/.ccache
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
