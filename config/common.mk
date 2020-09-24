@@ -11,14 +11,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
-    ro.error.receiver.system.apps=com.google.android.gms \
-    ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dataroaming=false \
-    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true \
     ro.com.google.ime.theme_id=5 \
     ro.storage_manager.enabled=1 \
-    ro.opa.eligible_device=true \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.network_required=false \
     ro.setupwizard.gservices_delay=-1 \
@@ -76,6 +72,20 @@ PRODUCT_PACKAGES += \
     mkfs.exfat \
     mkfs.ntfs \
     mount.ntfs
+
+# GMS
+ifeq ($(USE_GMS), true)
+
+# Inherit GMS, Pixel Features, and Modules.
+$(call inherit-product, vendor/google/gms/config.mk)
+
+# Don't preoptimize prebuilts when building GMS.
+DONT_DEXPREOPT_PREBUILTS := true
+
+endif #USE_GMS
+
+# Pixel Features
+$(call inherit-product, vendor/google/pixel/config.mk)
 
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
