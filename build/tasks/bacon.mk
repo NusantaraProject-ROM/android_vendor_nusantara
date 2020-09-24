@@ -25,7 +25,7 @@ ifneq ($(BUILD_WITH_COLORS),0)
 endif
 
 INTERNAL_BACON_TARGET := $(PRODUCT_OUT)/$(NAD_VERSION).zip
-MD5 := prebuilts/build-tools/path/$(HOST_OS)-x86/md5sum
+MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: nad
 nad: $(INTERNAL_OTA_PACKAGE_TARGET)
