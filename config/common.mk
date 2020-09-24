@@ -88,10 +88,10 @@ $(call inherit-product, vendor/google/gms/config.mk)
 # Don't preoptimize prebuilts when building GMS.
 DONT_DEXPREOPT_PREBUILTS := true
 
-endif #USE_GMS
-
 # Pixel Features
 $(call inherit-product, vendor/google/pixel/config.mk)
+
+endif #USE_GMS
 
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
