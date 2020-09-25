@@ -269,6 +269,16 @@ public class ColorPickerPreference extends Preference implements
     }
 
     /**
+     * For custom purposes. Not used by ColorPickerPreference
+     *
+     * set custom color preview from outside
+     * @author ankitgourav
+     */
+    public void setCustomColorPreview(int color) {
+        mDefaultValue = color;
+    }
+
+    /**
      * For custom purposes. Not used by ColorPickerPreferrence
      *
      * @param color
