@@ -116,4 +116,4 @@ include vendor/themes/common.mk
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay/common
 
-$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
+#$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
