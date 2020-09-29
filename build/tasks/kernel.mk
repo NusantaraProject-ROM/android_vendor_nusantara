@@ -208,7 +208,7 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifeq ($(KERNEL_LD),)
         KERNEL_LD :=
     endif
-    ifeq ($(TARGET_KERNEL_NO_LLVM_BINUTILS),true)
+    ifeq ($(TARGET_KERNEL_LLVM_BINUTILS),true)
         KERNEL_CC += AS=$(TARGET_KERNEL_CLANG_PATH)/bin/llvm-as
         KERNEL_CC += AR=$(TARGET_KERNEL_CLANG_PATH)/bin/llvm-ar
         KERNEL_CC += NM=$(TARGET_KERNEL_CLANG_PATH)/bin/llvm-nm
