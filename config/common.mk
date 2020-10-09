@@ -44,8 +44,8 @@ $(foreach f,$(wildcard vendor/nusantara/prebuilt/common/etc/init/*.rc),\
 
 # Backup tool
 PRODUCT_COPY_FILES += \
-    vendor/nusantara/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/nusantara/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/nusantara/build/tools/backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.sh \
+    vendor/nusantara/build/tools/backuptool.functions:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.functions \
     vendor/nusantara/build/tools/50-nad.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-nad.sh
 
 ifneq ($(AB_OTA_PARTITIONS),)
