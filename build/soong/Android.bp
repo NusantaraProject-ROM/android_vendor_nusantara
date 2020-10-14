@@ -1,12 +1,4 @@
 bootstrap_go_package {
-    name: "soong-nad",
-    pkgPath: "nad/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-nad-generator",
     pkgPath: "nad/soong/generator",
     deps: [
