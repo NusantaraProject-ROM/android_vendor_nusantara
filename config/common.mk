@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Art
-include vendor/nusantara/config/art.mk
+#include vendor/nusantara/config/art.mk
 
 # Branding
 include vendor/nusantara/config/branding.mk
