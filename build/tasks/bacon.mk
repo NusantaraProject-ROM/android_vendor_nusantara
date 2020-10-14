@@ -52,4 +52,6 @@ nad: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_RST}""${CL_RST}
 	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
 	@echo -e ${CL_RST}" Package Complete: $(INTERNAL_BACON_TARGET)"${CL_RST}
+	@echo -e ${CL_RST}" Size            : `ls -lah $(INTERNAL_BACON_TARGET) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ${CL_RST}" md5sum          : `cat $(INTERNAL_BACON_TARGET).md5sum | cut -d ' ' -f 1`"${CL_RST}
 	@echo -e ${CL_CYN}"======================================================================================="${CL_CYN}
