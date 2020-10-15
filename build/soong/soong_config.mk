@@ -4,7 +4,6 @@ add_json_val_default = $(call add_json_val, $(1), $(if $(strip $(2)), $(2), $(3)
 _json_contents := $(_json_contents) "Nad":{$(newline)
 
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
-$(call add_json_bool, Apply_msm8974_1440p_egl_workaround, $(filter true,$(TARGET_MSM8974_1440P_EGL_WORKAROUND)))
 $(call add_json_bool, Has_legacy_camera_hal1,                $(filter true,$(TARGET_HAS_LEGACY_CAMERA_HAL1)))
 $(call add_json_str_omitempty, Qcom_um_soong_namespace, $(if $(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),$(QCOM_SOONG_NAMESPACE),))
 $(call add_json_bool, Needs_camera_boottime_timestamp, $(filter true,$(TARGET_CAMERA_BOOTTIME_TIMESTAMP)))
