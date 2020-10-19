@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     TouchGestures \
     StitchImage \
+    WallpaperCropper2 \
     SimpleDeviceConfig
 
 # Allows registering device to Google easier for gapps
