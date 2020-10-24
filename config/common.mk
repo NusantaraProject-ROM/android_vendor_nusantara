@@ -31,12 +31,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.setupwizard.gservices_delay=-1 \
     ro.setupwizard.mode=OPTIONAL \
     setupwizard.feature.predeferred_enabled=false \
-    drm.service.enabled=true \
     net.tethering.noprovisioning=true \
-    keyguard.no_require_sim=true \
     persist.sys.disable_rescue=true \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
     ro.build.selinux=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
