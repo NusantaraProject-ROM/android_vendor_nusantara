@@ -120,6 +120,7 @@ include vendor/nusantara/config/packages.mk
 
 # Themes
 include vendor/themes/common.mk
+-include packages/apps/Plugins/plugins.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay
