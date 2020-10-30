@@ -102,6 +102,7 @@ endif
 QCOM_SOONG_NAMESPACE ?= hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
 PRODUCT_SOONG_NAMESPACES += $(QCOM_SOONG_NAMESPACE)
 
-# Allow a device to redefine DATA_IPA_CFG_MGR_SOONG_NAMESPACE
-DATA_IPA_CFG_MGR_SOONG_NAMESPACE ?= vendor/qcom/opensource/data-ipa-cfg-mgr
-PRODUCT_SOONG_NAMESPACES += $(DATA_IPA_CFG_MGR_SOONG_NAMESPACE)
+# Add data-ipa-cfg-mgr to PRODUCT_SOONG_NAMESPACES if needed
+ifneq ($(USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR),true)
+    PRODUCT_SOONG_NAMESPACES += vendor/qcom/opensource/data-ipa-cfg-mgr
+endif
