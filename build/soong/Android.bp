@@ -51,6 +51,23 @@ cc_library_headers {
 
 // Target platform agnostic config modules
 soong_config_module_type {
+    name: "disable_postrender_cleanup",
+    module_type: "cc_defaults",
+    config_namespace: "nadGlobalVars",
+    bool_variables: ["disable_postrender_cleanup"],
+    properties: ["cppflags"],
+}
+
+disable_postrender_cleanup {
+    name: "disable_postrender_cleanup_defaults",
+    soong_config_variables: {
+        disable_postrender_cleanup: {
+            cppflags: ["-DDISABLE_POSTRENDER_CLEANUP"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "gralloc_10_usage_bits",
     module_type: "cc_defaults",
     config_namespace: "nadGlobalVars",
@@ -283,7 +300,7 @@ nvidia_enhancements {
 soong_config_module_type {
     name: "ipacm_no_mtu",
     module_type: "cc_defaults",
-    config_namespace: "lineageQcomVars",
+    config_namespace: "nadQcomVars",
     bool_variables: ["uses_no_mtu_ipacm"],
     properties: ["cflags"],
 }
