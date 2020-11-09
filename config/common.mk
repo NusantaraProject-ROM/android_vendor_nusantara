@@ -85,13 +85,19 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-# GAPPS
-ifeq ($(USE_GAPPS), true)
+# GMS
+ifeq ($(USE_GMS), true)
+
+# Inherit GMS, Pixel Features, and Modules.
+$(call inherit-product, vendor/google/gms/config.mk)
+
+# Don't preoptimize prebuilts when building GMS.
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Pixel Features
-$(call inherit-product, vendor/gapps/gapps.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
 
-endif #USE_GAPPS
+endif #USE_GMS
 
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
