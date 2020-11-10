@@ -13,6 +13,7 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     Gallery2 \
     OmniStyle \
+    QuickAccessWallet \
     messaging \
     WallpaperPicker2 \
     ThemePicker \
