@@ -64,6 +64,12 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
+# Dexpreopt apps
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Launcher3QuickStep \
+    Settings \
+    SystemUI
+
 # Enable ccache
 USE_CCACHE := true
 
