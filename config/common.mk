@@ -64,12 +64,6 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Dexpreopt apps
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    Settings \
-    SystemUI
-
 # Enable ccache
 USE_CCACHE := true
 
@@ -104,7 +98,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Art
-#include vendor/nusantara/config/art.mk
+include vendor/nusantara/config/art.mk
 
 # Branding
 include vendor/nusantara/config/branding.mk

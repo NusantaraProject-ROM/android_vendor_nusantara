@@ -6,11 +6,8 @@ ART_BUILD_HOST_NDEBUG := true
 ART_BUILD_HOST_DEBUG := false
 USE_DEX2OAT_DEBUG := false
 
-# Dex pre-opt
-WITH_DEXPREOPT := true
-WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
-
-# Speed apps
+# Dexpreopt apps
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-  SystemUI \
-  Settings
+    Launcher3QuickStep \
+    Settings \
+    SystemUI
