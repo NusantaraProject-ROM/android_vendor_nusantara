@@ -11,7 +11,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     CustomDoze \
-    MatLog \
     Gallery2 \
     OmniStyle \
     messaging \
