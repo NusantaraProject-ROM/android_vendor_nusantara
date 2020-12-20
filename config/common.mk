@@ -90,6 +90,12 @@ $(call inherit-product, vendor/google/pixel/config.mk)
 
 endif #USE_GAPPS
 
+# MicroG
+ifeq ($(USE_MICROG),true)
+include prebuilts/prebuiltapks/microg.mk
+PRODUCT_PACKAGES += bromite-webview
+endif # MicroG
+
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
 PRODUCT_PACKAGES += \
