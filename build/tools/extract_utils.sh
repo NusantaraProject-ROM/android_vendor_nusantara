@@ -29,6 +29,7 @@ ARCHES=
 FULLY_DEODEXED=-1
 
 TMPDIR=$(mktemp -d)
+HOST="$(uname | tr '[:upper:]' '[:lower:]')"
 
 #
 # cleanup
@@ -100,6 +101,10 @@ function setup_vendor() {
     else
         VENDOR_STATE=0
         VENDOR_RADIO_STATE=0
+    fi
+
+    if [ -z "$PATCHELF" ]; then
+        export PATCHELF="$NAD_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/patchelf
     fi
 }
 
@@ -1248,7 +1253,6 @@ function oat2dex() {
     local SRC="$3"
     local TARGET=
     local OAT=
-    local HOST="$(uname | tr '[:upper:]' '[:lower:]')"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
         export BAKSMALIJAR="$NAD_ROOT"/prebuilts/tools-extras/common/smali/baksmali.jar
@@ -1261,10 +1265,6 @@ function oat2dex() {
 
     if [ -z "$CDEXCONVERTER" ]; then
         export CDEXCONVERTER="$NAD_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/compact_dex_converter
-    fi
-
-    if [ -z "$PATCHELF" ]; then
-        export PATCHELF="$NAD_ROOT"/prebuilts/tools-extras/${HOST}-x86/bin/patchelf
     fi
 
     # Extract existing boot.oats to the temp folder
