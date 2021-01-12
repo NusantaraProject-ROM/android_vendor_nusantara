@@ -77,9 +77,7 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Fingerprint
-ifeq ($(TARGET_BUILD_VARIANT),user)
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ1A.210105.003/7005429:user/release-keys
-endif
 
 # GMS
 ifeq ($(USE_GAPPS), true)
