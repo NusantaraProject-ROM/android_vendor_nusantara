@@ -1,6 +1,5 @@
 # OTA
 ifeq ($(NAD_BUILD_TYPE), OFFICIAL)
-
 PRODUCT_PACKAGES += \
     Updater
 
@@ -10,6 +9,7 @@ endif
 PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
+    DeskClock \
     CustomDoze \
     Gallery2 \
     OmniStyle \
