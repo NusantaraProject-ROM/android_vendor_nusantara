@@ -1,13 +1,13 @@
 function __print_nad_functions_help() {
 cat <<EOF
-Additional Corvus-OS functions:
+Additional NusantaraProject functions:
 - cout:            Changes directory to out.
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
 - aospremote:      Add git remote for matching AOSP repository.
 - cafremote:       Add git remote for matching CodeAurora repository.
-- githubremote:    Add git remote for Corvus-OS Github.
+- githubremote:    Add git remote for NusantaraProject Github.
 - mka:             Builds using SCHED_BATCH on all processors.
 - mkap:            Builds the module(s) using mka and pushes them to the device.
 - cmka:            Cleans and builds using mka.
@@ -416,7 +416,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                corvus|otapackage|systemimage)
+                nad|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
