@@ -54,6 +54,7 @@ SOONG_CONFIG_nadNvidiaVars += \
 
 SOONG_CONFIG_NAMESPACES += nadQcomVars
 SOONG_CONFIG_nadQcomVars += \
+    legacy_hw_disk_encryption \
     should_wait_for_qsee \
     supports_extended_compress_format \
     supports_hw_fde \
@@ -81,6 +82,7 @@ SOONG_CONFIG_nadQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSE
 SOONG_CONFIG_nadQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_nadQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_nadQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
+SOONG_CONFIG_nadQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_nadQcomVars_uses_no_mtu_ipacm := $(TARGET_USES_NO_MTU_IPACM)
 SOONG_CONFIG_nadQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 SOONG_CONFIG_nadQcomVars_uses_qcom_bsp_legacy := $(TARGET_USES_QCOM_BSP_LEGACY)
