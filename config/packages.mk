@@ -2,7 +2,6 @@
 ifeq ($(NAD_BUILD_TYPE), OFFICIAL)
 PRODUCT_PACKAGES += \
     Updater
-
 endif
 
 # Packages
@@ -24,7 +23,8 @@ PRODUCT_PACKAGES += \
     WallpaperCropper2 \
     SimpleDeviceConfig \
     NusantaraPapersStub \
-    Stk
+    Stk \
+    GamingMode
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
