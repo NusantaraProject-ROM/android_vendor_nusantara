@@ -56,6 +56,8 @@ SOONG_CONFIG_NAMESPACES += nadQcomVars
 SOONG_CONFIG_nadQcomVars += \
     should_wait_for_qsee \
     supports_extended_compress_format \
+    supports_audio_accessory \
+    supports_debug_accessory \
     supports_hw_fde \
     supports_hw_fde_perf \
     uses_no_mtu_ipacm \
@@ -78,6 +80,8 @@ SOONG_CONFIG_nadGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORE
 SOONG_CONFIG_nadGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
 SOONG_CONFIG_nadNvidiaVars_uses_nv_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_nadQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
+SOONG_CONFIG_nadQcomVars_supports_audio_accessory := $(TARGET_QTI_USB_SUPPORTS_AUDIO_ACCESSORY)
+SOONG_CONFIG_nadQcomVars_supports_debug_accessory := $(TARGET_QTI_USB_SUPPORTS_DEBUG_ACCESSORY)
 SOONG_CONFIG_nadQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_nadQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_nadQcomVars_supports_hw_fde_perf := $(TARGET_HW_DISK_ENCRYPTION_PERF)
