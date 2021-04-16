@@ -90,6 +90,11 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys
 
+ADDITIONAL_BUILD_PROPERTIES += \
+    ro.build.tags=release-keys \
+    ro.build.flavor=$(PRODUCT_NAME)-user \
+    ro.build.stock_fingerprint=$(BUILD_FINGERPRINT)
+
 # GMS
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/google/gms/config.mk)
