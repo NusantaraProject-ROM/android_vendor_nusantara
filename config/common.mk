@@ -92,16 +92,9 @@ BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210405.005/7181113:user/releas
 
 # GMS
 ifeq ($(USE_GAPPS), true)
-
-# Inherit GMS, Pixel Features, and Modules.
 $(call inherit-product, vendor/google/gms/config.mk)
-
-# Don't preoptimize prebuilts when building GMS.
-DONT_DEXPREOPT_PREBUILTS := true
-
-# Pixel Features
 $(call inherit-product, vendor/google/pixel/config.mk)
-
+DONT_DEXPREOPT_PREBUILTS := true
 endif #USE_GAPPS
 
 # MicroG
@@ -146,8 +139,6 @@ include vendor/themes/common.mk
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay/common
-
-$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
 
 # QTI Components
 $(call inherit-product-if-exists, device/qcom/common/common.mk)
