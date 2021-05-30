@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
     StitchImageService \
     WallpaperCropper2 \
     SimpleDeviceConfig \
-    NusantaraPapersStub
+    NusantaraPapersStub \
+    Stk
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
