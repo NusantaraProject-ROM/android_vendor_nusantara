@@ -370,20 +370,18 @@ qti_camera_device {
 }
 
 soong_config_module_type {
-    name: "camera_boottime_timestamp",
+    name: "needs_camera_boottime",
     module_type: "cc_defaults",
-    config_namespace: "nadQcomVars",
-    bool_variables: ["needs_camera_boottime_timestamp"],
-    properties: [
-        "cflags",
-    ],
+    config_namespace: "nadGlobalVars",
+    bool_variables: ["needs_camera_boottime"],
+    properties: ["cppflags"],
 }
 
-camera_boottime_timestamp {
-    name: "needs_camera_boottime",
+needs_camera_boottime {
+    name: "needs_camera_boottime_defaults",
     soong_config_variables: {
-        needs_camera_boottime_timestamp: {
-            cflags: ["-DTARGET_CAMERA_BOOTTIME_TIMESTAMP"],
+        needs_camera_boottime: {
+            cppflags: ["-DTARGET_CAMERA_BOOTTIME_TIMESTAMP"],
         },
     },
 }
