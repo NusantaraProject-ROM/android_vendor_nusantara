@@ -91,10 +91,8 @@ PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
-    fsck.exfat \
     fsck.ntfs \
     mke2fs \
-    mkfs.exfat \
     mkfs.ntfs \
     mount.ntfs
 
