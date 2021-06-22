@@ -65,6 +65,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/nad-power-whitelist.xml
 
+# Font service Permissions
+PRODUCT_COPY_FILES += \
+    vendor/nusantara/config/permissions/privapp-permissions-nad-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-nad-system_ext.xml
+
 ifeq ($(TARGET_USES_BLUR), true)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sf.blurs_are_expensive=1 \
