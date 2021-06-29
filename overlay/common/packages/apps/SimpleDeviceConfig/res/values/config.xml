@@ -26,6 +26,8 @@
 
         <!-- ART heap compaction for cached apps -->
         <item>activity_manager/use_compaction=true</item>
+        <!-- Allow more cached apps in the background -->
+        <item>activity_manager/max_cached_processes=64</item>
 
         <!-- Adaptive Sound (Pixel 2020) -->
         <item>device_personalization_services/AdaptiveAudio__enable_adaptive_audio=true</item>
@@ -52,5 +54,7 @@
         <item>systemui/use_back_gesture_ml_model=true</item>
         <item>systemui/back_gesture_ml_model_name=backgesture</item>
         <item>systemui/back_gesture_ml_model_threshold=0.9</item>
+
+
     </string-array>
 </resources>
