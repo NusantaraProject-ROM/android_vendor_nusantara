@@ -289,6 +289,9 @@
     <!-- Recents text and image selection for Pixel Launcher (not supported by Launcher3) -->
     <string name="config_defaultContentSuggestionsService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentSuggestionsService</string>
 
+    <!-- Flag indicating which package name can access the persistent data partition -->
+    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
+
     <!-- System font packages (overlay in vendor) -->
     <string-array name="config_fontPackages" translatable="false">
         <item>com.nusantara.fonts</item>
