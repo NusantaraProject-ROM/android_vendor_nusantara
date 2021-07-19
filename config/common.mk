@@ -113,7 +113,6 @@ endif #USE_GAPPS
 # MicroG
 ifeq ($(USE_MICROG),true)
 include prebuilts/prebuiltapks/microg.mk
-PRODUCT_PACKAGES += bromite-webview
 endif # MicroG
 
 # Offline charger
