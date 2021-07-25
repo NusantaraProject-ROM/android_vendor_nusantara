@@ -3289,6 +3289,7 @@
   <apn carrier="3 ID" mcc="510" mnc="89" apn="3gprs" user="3gprs" password="3gprs" type="default,supl" />
   <apn carrier="3 ID INTERNET" mcc="510" mnc="89" apn="3data" user="3data" password="3data" type="default,supl" />
   <apn carrier="3 ID MMS" mcc="510" mnc="89" apn="3mms" user="3mms" password="3mms" mmsc="http://mmsthree.co.id" mmsproxy="10.4.0.10" mmsport="3128" type="mms" />
+  <apn carrier="515 66 DITO" mcc="515" mnc="66" apn="dito.internet.ph" type="default,supl" />
   <apn carrier="myGlobe Prepaid" mcc="515" mnc="02" apn="http.globe.com.ph" type="default,supl" />
   <apn carrier="myGlobe Postpaid" mcc="515" mnc="02" apn="internet.globe.com.ph" type="default,supl" />
   <apn carrier="myGlobe Connect" mcc="515" mnc="02" apn="www.globe.com.ph" proxy="203.177.042.214" port="8080" type="default,supl" />
