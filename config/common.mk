@@ -109,6 +109,9 @@ ifeq ($(USE_LAWNCHAIR), true)
 $(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
 endif
 
+# Lineage HALs Manifest
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/nusantara/config/device_framework_matrix.xml
+
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
 PRODUCT_PACKAGES += \
