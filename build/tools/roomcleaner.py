@@ -61,7 +61,7 @@ removal_manifest = ".repo/local_manifests/00_nad_removals.xml"
 tmp_removal_manifest = ".repo/local_manifests/tmp_nad_removals.xml"
 
 def exists_in_tree(lm, repository):
-    for child in lm.getchildren():
+    for child in lm:
         if child.attrib['name'].endswith(repository):
             return child
     return None
@@ -180,7 +180,7 @@ def remove_removals(removal_manifest):
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")
-    for child in lm.getchildren():
+    for child in lm:
         syncable_repos.append(child.attrib['name'])
     os.system('rm %s' % removal_manifest)
 
@@ -199,7 +199,7 @@ def remove_dependency(dependency_paths, manifest_path):
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")
-    for child in lm.getchildren():
+    for child in lm:
         for dependency_path in dependency_paths.split('\n'):
             if child.attrib['path'] == dependency_path:
                 print('Removing dependency %s from local manifest to avoid conflicts' % child.attrib['path'])
