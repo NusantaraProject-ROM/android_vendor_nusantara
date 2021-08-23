@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     ThemePicker \
     TouchGestures \
+    SoftAPManager \
     StitchImage \
     StitchImageService \
     WallpaperCropper2 \
