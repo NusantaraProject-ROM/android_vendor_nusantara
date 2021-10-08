@@ -1,7 +1,7 @@
-NAD_VERSION_BASE := 3.3
-NAD_BUILD_CODENAME := Rhun
+NAD_VERSION_BASE := 4.0
+NAD_BUILD_CODENAME := Surabaya
 NAD_BUILD_TYPE ?= UNOFFICIAL
-NAD_OTA_BRANCH := 11
+NAD_OTA_BRANCH := 12
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)

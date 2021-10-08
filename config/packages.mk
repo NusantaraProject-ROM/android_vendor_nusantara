@@ -17,12 +17,7 @@ PRODUCT_PACKAGES += \
     messaging \
     WallpaperPicker2 \
     ThemePicker \
-    TouchGestures \
-    SoftAPManager \
-    StitchImage \
-    StitchImageService \
     WallpaperCropper2 \
-    SimpleDeviceConfig \
     NusantaraPapersStub \
     Stk \
     GamingMode
@@ -31,7 +26,3 @@ PRODUCT_PACKAGES += \
 # Integrates package for easier Google Pay fixing
 PRODUCT_PACKAGES += \
     sqlite3
-
-# Fonts
-PRODUCT_PACKAGES += \
-    Nusantara-Fonts

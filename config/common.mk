@@ -86,22 +86,12 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Enable ccache
 USE_CCACHE := true
 
-# Flatten APEXs for performance
-OVERRIDE_TARGET_FLATTEN_APEX := true
-
-# This needs to be specified explicitly to override ro.apex.updatable=true from
-# prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
-PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
-
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.ntfs \
     mke2fs \
     mkfs.ntfs \
     mount.ntfs
-
-# Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210905.001/7511028:user/release-keys
 
 # GMS
 ifeq ($(USE_GAPPS), true)
