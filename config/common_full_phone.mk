@@ -1,6 +1,13 @@
 # Inherit common stuff
 $(call inherit-product, vendor/nusantara/config/common.mk)
 
+# Overlays
+PRODUCT_PACKAGES += \
+    DisplayCutoutEmulationNarrowOverlay \
+    DisplayCutoutEmulationWideOverlay \
+    NoCutoutOverlay \
+    AvoidAppsInCutoutOverlay
+
 # World APN list
 PRODUCT_PACKAGES += \
     apns-conf.xml
