@@ -86,13 +86,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Enable ccache
 USE_CCACHE := true
 
-# Filesystems tools
-PRODUCT_PACKAGES += \
-    fsck.ntfs \
-    mke2fs \
-    mkfs.ntfs \
-    mount.ntfs
-
 # Android 12 now writes XML files in binary format by default. 
 # This can cause incompatibility with TWRP which can hang when attempting 
 # to read XML files e.g. /data/system/storage.xml
