@@ -11,16 +11,12 @@ PRODUCT_PACKAGES += \
     DeskClock \
     CustomDoze \
     Gallery2 \
-    OmniStyle \
-    OmniJaws \
     QuickAccessWallet \
     messaging \
     WallpaperPicker2 \
     ThemePicker \
-    WallpaperCropper2 \
     NusantaraPapersStub \
-    Stk \
-    GamingMode
+    Stk
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
