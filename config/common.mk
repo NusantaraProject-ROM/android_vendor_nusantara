@@ -93,6 +93,12 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
+# Android 12 now writes XML files in binary format by default. 
+# This can cause incompatibility with TWRP which can hang when attempting 
+# to read XML files e.g. /data/system/storage.xml
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false
+
 # GMS
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/google/gms/config.mk)
