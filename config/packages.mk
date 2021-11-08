@@ -16,7 +16,8 @@ PRODUCT_PACKAGES += \
     WallpaperPicker2 \
     ThemePicker \
     NusantaraPapersStub \
-    Stk
+    Stk \
+    SimpleDeviceConfig
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
