@@ -100,9 +100,6 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
-# Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.211001.001/7641976:user/release-keys
-
 # GMS
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/google/gms/config.mk)
