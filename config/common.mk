@@ -65,16 +65,6 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/nad-power-whitelist.xml
 
-# Font service Permissions
-PRODUCT_COPY_FILES += \
-    vendor/nusantara/config/permissions/privapp-permissions-nad-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-nad-system_ext.xml
-
-ifeq ($(TARGET_USES_BLUR), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1
-endif
-
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
@@ -108,16 +98,6 @@ ifeq ($(USE_PIXEL_CHARGING),true)
 PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images
-endif
-
-TARGET_FACE_UNLOCK_SUPPORTED ?= true
-ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-PRODUCT_PACKAGES += \
-    FaceUnlockService
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
 # Art
