@@ -73,9 +73,6 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Enable ccache
-USE_CCACHE := true
-
 # Android 12 now writes XML files in binary format by default. 
 # This can cause incompatibility with TWRP which can hang when attempting 
 # to read XML files e.g. /data/system/storage.xml
