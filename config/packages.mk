@@ -1,7 +1,8 @@
 # OTA
 ifeq ($(NAD_BUILD_TYPE), OFFICIAL)
 PRODUCT_PACKAGES += \
-    Updater
+    Updater \
+    GameSpace
 endif
 
 # Packages
