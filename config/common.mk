@@ -119,3 +119,4 @@ DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay/common
 
 # QTI Components
 $(call inherit-product-if-exists, device/qcom/common/common.mk)
+$(call inherit-product-if-exists, packages/apps/GameSpace/gamespace.mk)

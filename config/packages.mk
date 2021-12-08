@@ -1,10 +1,3 @@
-# OTA
-ifeq ($(NAD_BUILD_TYPE), OFFICIAL)
-PRODUCT_PACKAGES += \
-    Updater \
-    GameSpace
-endif
-
 # Packages
 PRODUCT_PACKAGES += \
     LiveWallpapers \
