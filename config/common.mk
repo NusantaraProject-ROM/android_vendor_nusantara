@@ -63,7 +63,8 @@ endif
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/nad-power-whitelist.xml
+    vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/nad-power-whitelist.xml \
+    vendor/nusantara/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
