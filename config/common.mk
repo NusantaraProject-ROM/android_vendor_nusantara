@@ -92,6 +92,8 @@ endif # MicroG
 
 ifeq ($(USE_LAWNCHAIR), true)
 -include vendor/nusantara/prebuilt/Lawnchair/lawnchair.mk
+# Lawnicons
+$(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
 endif
 
 # Offline charger
