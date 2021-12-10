@@ -90,6 +90,10 @@ ifeq ($(USE_MICROG),true)
 include prebuilts/prebuiltapks/microg.mk
 endif # MicroG
 
+ifeq ($(USE_LAWNCHAIR), true)
+-include vendor/nusantara/prebuilt/Lawnchair/lawnchair.mk
+endif
+
 # Offline charger
 ifeq ($(USE_PIXEL_CHARGING),true)
 PRODUCT_PACKAGES += \
