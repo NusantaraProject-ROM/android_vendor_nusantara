@@ -1,7 +1,9 @@
 android_library {
 
     name: "VendorSupportLib",
-
+    defaults: [
+        "SettingsLibDefaults",
+    ],
     static_libs: [
         "androidx.annotation_annotation",
         "androidx.legacy_legacy-support-v4",

@@ -22,6 +22,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.provider.Settings;
 
+import androidx.preference.ListPreference;
+
 public class SystemSettingListPreference extends ListPreference {
     private boolean mAutoSummary = false;
 

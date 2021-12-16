@@ -20,6 +20,8 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
+import androidx.preference.ListPreference;
+
 public class SystemPropListPreference extends ListPreference {
 
     public SystemPropListPreference(Context context, AttributeSet attrs, int defStyle) {

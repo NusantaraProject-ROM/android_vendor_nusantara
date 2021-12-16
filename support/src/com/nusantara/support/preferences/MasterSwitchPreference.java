@@ -24,6 +24,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Switch;
 
+import com.android.settingslib.widget.TwoTargetPreference;
+
 import com.nusantara.support.R;
 
 /**
