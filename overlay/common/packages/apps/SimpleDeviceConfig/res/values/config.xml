@@ -62,6 +62,9 @@
         <item>device_personalization_services/AdaptiveAudio__enable_adaptive_audio=true</item>
         <item>device_personalization_services/AdaptiveAudio__show_promo_notification=true</item>
 
+        <!-- Now Playing (Pixel 2017) -->
+        <item>device_personalization_services/NowPlaying__ambient_music_index_manifest_17_09_02=194:https://storage.googleapis.com/music-iq-db/updatable_ytm_db/20211212-030112/manifest.json</item>
+
         <!-- Recents text selection (for Pixel Launcher users) -->
         <item>device_personalization_services/Overview__enable_image_selection=true</item>
         <item>device_personalization_services/Overview__enable_japanese_ocr=true</item>
