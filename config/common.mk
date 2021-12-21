@@ -15,7 +15,7 @@ else
 # Enable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 
-# Disable extra StrictMode features on all non-engineering builds
+# Disable extra SrictMode features on all non-engineering builds
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.strictmode.disable=true
 endif
 
@@ -103,6 +103,11 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     product_charger_res_images
 endif
+
+# Nusantara-specific init rc file
+PRODUCT_COPY_FILES += \
+    vendor/nusantara/prebuilt/common/etc/init/nad-system.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/nad-system.rc \
+    vendor/nusantara/prebuilt/common/etc/init/nad-ssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/nad-ssh.rc
 
 # Art
 include vendor/nusantara/config/art.mk
