@@ -40,10 +40,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
 
-# Copy all custom init rc files
-$(foreach f,$(wildcard vendor/nusantara/prebuilt/common/etc/init/*.rc),\
-    $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
-
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/nusantara/build/tools/backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/install/bin/backuptool.sh \
@@ -63,7 +59,7 @@ endif
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/nad-power-whitelist.xml \
+    vendor/nusantara/config/permissions/nad-power-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/nad-power-whitelist.xml \
     vendor/nusantara/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
 
 # Disable vendor restrictions
