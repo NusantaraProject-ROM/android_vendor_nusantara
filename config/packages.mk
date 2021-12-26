@@ -2,6 +2,7 @@
 PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
+    Camera \
     DeskClock \
     CustomDoze \
     Gallery2 \
