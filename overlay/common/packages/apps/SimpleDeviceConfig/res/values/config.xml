@@ -29,6 +29,9 @@
         <!-- Allow more cached apps in the background -->
         <item>activity_manager/max_cached_processes=64</item>
 
+        <!-- Don't pin camera app to save memory -->
+        <item>runtime_native_boot/pin_camera=false</item>
+
         <!-- Adaptive Sound (Pixel 2020) -->
         <item>device_personalization_services/AdaptiveAudio__enable_adaptive_audio=true</item>
         <item>device_personalization_services/AdaptiveAudio__show_promo_notification=true</item>
