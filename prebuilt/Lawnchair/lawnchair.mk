@@ -1,7 +1,11 @@
 # Lawnchair
 LAWN_ROOT := vendor/nusantara/prebuilt/Lawnchair
 
-PRODUCT_PACKAGES += Lawnchair
+PRODUCT_PACKAGES += \
+    Lawnchair \
+    LawnchairOverlay \
+    Lawnicons
+    
 PRODUCT_PACKAGES += Lawnicons
 PRODUCT_PACKAGE_OVERLAYS += $(LAWN_ROOT)/overlay
 PRODUCT_COPY_FILES += \
