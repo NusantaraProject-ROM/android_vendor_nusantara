@@ -2,6 +2,7 @@
 LAWN_ROOT := vendor/nusantara/prebuilt/Lawnchair
 
 PRODUCT_PACKAGES += Lawnchair
+PRODUCT_PACKAGES += Lawnicons
 PRODUCT_PACKAGE_OVERLAYS += $(LAWN_ROOT)/overlay
 PRODUCT_COPY_FILES += \
     $(LAWN_ROOT)/permissions/privapp-permissions-lawnchair.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lawnchair.xml \
