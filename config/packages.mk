@@ -18,3 +18,6 @@ PRODUCT_PACKAGES += \
 # Integrates package for easier Google Pay fixing
 PRODUCT_PACKAGES += \
     sqlite3
+
+#overlay
+$(call inherit-product, vendor/lawnicons/product.mk)
