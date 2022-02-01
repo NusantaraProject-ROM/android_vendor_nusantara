@@ -87,7 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GMS
 ifeq ($(USE_GAPPS), true)
-$(call inherit-product, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/gms/products/gms.mk)
 DONT_DEXPREOPT_PREBUILTS := true
 endif #USE_GAPPS
 
