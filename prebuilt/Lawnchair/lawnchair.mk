@@ -4,7 +4,8 @@ LAWN_ROOT := vendor/nusantara/prebuilt/Lawnchair
 PRODUCT_PACKAGES += \
     Lawnchair \
     LawnchairOverlay \
-    Lawnicons
+    Lawnicons \
+    recentsComponentOverlay
     
 PRODUCT_PACKAGES += Lawnicons
 PRODUCT_PACKAGE_OVERLAYS += $(LAWN_ROOT)/overlay
