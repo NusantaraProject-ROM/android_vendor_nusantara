@@ -121,6 +121,10 @@ PRODUCT_COPY_FILES += \
     vendor/nusantara/prebuilt/common/etc/init/nad-system.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/nad-system.rc \
     vendor/nusantara/prebuilt/common/etc/init/nad-ssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/nad-ssh.rc
 
+# App lock
+PRODUCT_COPY_FILES += \
+    vendor/nusantara/config/permissions/app_lock_permission.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/app_lock_permission.xml
+
 # Art
 include vendor/nusantara/config/art.mk
 
