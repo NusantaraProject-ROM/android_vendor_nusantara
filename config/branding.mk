@@ -1,7 +1,7 @@
-NAD_VERSION_BASE := 4.2
-NAD_BUILD_CODENAME := Sabang
+NAD_VERSION_BASE := 4.3
+NAD_BUILD_CODENAME := Seinendan
 NAD_BUILD_TYPE ?= UNOFFICIAL
-NAD_OTA_BRANCH := 12
+NAD_OTA_BRANCH := 12L
 
 # Set all versions
 BUILD_DATE := $(shell date -u +%d%m%Y)
