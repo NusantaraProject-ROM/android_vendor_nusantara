@@ -197,16 +197,13 @@ def add_to_manifest(repos, fallback_branch=None):
 
 _fetch_dep_cache = []
 
-def fetch_dependencies(repo_path, fallback_branch=None, first_dependency=False):
+def fetch_dependencies(repo_path, fallback_branch=None):
     global _fetch_dep_cache
     if repo_path in _fetch_dep_cache:
         return
     _fetch_dep_cache.append(repo_path)
 
     print('Looking for dependencies')
-
-    if first_dependency:
-        os.system('vendor/nusantara/build/tools/roomcleaner.py %s' % repo_path)
 
     dep_p = '/'.join((repo_path, custom_dependencies))
     if os.path.exists(dep_p):
@@ -278,7 +275,7 @@ def main():
     if depsonly:
         repo_path = get_from_manifest(device)
         if repo_path:
-            fetch_dependencies(repo_path, None, True)
+            fetch_dependencies(repo_path)
         else:
             print("Trying dependencies-only mode on a "
                   "non-existing device tree?")
@@ -324,7 +321,7 @@ def main():
         os.system('repo sync --force-sync --no-tags --current-branch --no-clone-bundle %s' % repo_path)
         print("Repository synced!")
 
-        fetch_dependencies(repo_path, fallback_branch, True)
+        fetch_dependencies(repo_path, fallback_branch)
         print("Done")
         sys.exit()
 
