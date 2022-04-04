@@ -116,6 +116,13 @@ PRODUCT_PACKAGES += \
     product_charger_res_images
 endif
 
+ifeq ($(TARGET_USES_BLUR), true)
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.blurs_are_expensive=1 \
+    persist.sys.sf.disable_blurs=1 \
+    ro.surface_flinger.supports_background_blur=1
+endif
+
 # Nusantara-specific init rc file
 PRODUCT_COPY_FILES += \
     vendor/nusantara/prebuilt/common/etc/init/nad-system.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/nad-system.rc \
