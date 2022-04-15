@@ -13,6 +13,10 @@ android_library {
         "androidx.lifecycle_lifecycle-runtime",
     ],
 
+    optimize: {
+        enabled: false,
+    },
+
     resource_dirs: ["res"],
 
     srcs: ["src/**/*.java"],
