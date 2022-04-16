@@ -12,7 +12,8 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     NusantaraPapersStub \
     Stk \
-    SimpleDeviceConfig
+    SimpleDeviceConfig \
+    TouchGestures
 
 # Allows registering device to Google easier for gapps
 # Integrates package for easier Google Pay fixing
