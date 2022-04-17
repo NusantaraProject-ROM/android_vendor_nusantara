@@ -35,7 +35,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     setupwizard.feature.predeferred_enabled=false \
     net.tethering.noprovisioning=true \
     persist.sys.disable_rescue=true \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    persist.wm.enable_remote_keyguard_animation=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.services.whitelist.packagelist=com.google.android.gms
