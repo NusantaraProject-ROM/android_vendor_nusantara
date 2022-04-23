@@ -632,3 +632,6 @@ function fixup_common_out_dir() {
         mkdir -p ${common_out_dir}
     fi
 }
+
+# Disable ABI checking
+export SKIP_ABI_CHECKS=true
