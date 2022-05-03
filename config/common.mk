@@ -91,24 +91,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gms/products/gms.mk)
 DONT_DEXPREOPT_PREBUILTS := true
-
-ifneq ($(USE_LAWNCHAIR), true)
-# Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
-endif #USE_LAWNCHAIR
 endif #USE_GAPPS
 
 # MicroG
 ifeq ($(USE_MICROG),true)
 include prebuilts/prebuiltapks/microg.mk
 endif # MicroG
-
-ifeq ($(USE_LAWNCHAIR), true)
--include vendor/nusantara/prebuilt/Lawnchair/lawnchair.mk
-# Lawnicons
-$(call inherit-product-if-exists, vendor/lawnicons/overlay.mk)
-endif
 
 # Lineage HALs Manifest
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/nusantara/config/device_framework_matrix.xml
