@@ -93,6 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gms/products/gms.mk)
 DONT_DEXPREOPT_PREBUILTS := true
+else ifneq ($(USE_AOSP_LAUNCHER), true)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
 endif #USE_GAPPS
