@@ -96,6 +96,10 @@ DONT_DEXPREOPT_PREBUILTS := true
 ifneq ($(USE_AOSP_LAUNCHER), true)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
+ifneq ($(USE_LAWNCHAIR), true)
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
+DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
+endif #USE_LAWNCHAIR
 endif #USE_AOSP_LAUNCHER
 endif #USE_GAPPS
 

@@ -15,7 +15,7 @@
   ~ limitations under the License
   -->
 <permissions>
-    <privapp-permissions package="app.lawnchair">
+    <privapp-permissions package="app.lawnchair.twelvel">
         <permission name="android.permission.BIND_APPWIDGET" />
         <permission name="android.permission.CALL_PHONE" />
         <permission name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS" />
@@ -38,8 +38,8 @@
         <permission name="android.permission.SET_WALLPAPER_HINTS" />
         <permission name="android.permission.VIBRATE" />
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
-        <permission name="app.lawnchair.permission.HOTSEAT_EDU" />
-        <permission name="app.lawnchair.permission.READ_SETTINGS" />
-        <permission name="app.lawnchair.permission.WRITE_SETTINGS" />
+        <permission name="app.lawnchair.twelvel.permission.HOTSEAT_EDU" />
+        <permission name="app.lawnchair.twelvel.permission.READ_SETTINGS" />
+        <permission name="app.lawnchair.twelvel.permission.WRITE_SETTINGS" />
     </privapp-permissions>
 </permissions>
