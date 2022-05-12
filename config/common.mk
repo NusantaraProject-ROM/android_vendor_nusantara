@@ -93,14 +93,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gms/products/gms.mk)
 DONT_DEXPREOPT_PREBUILTS := true
-ifneq ($(USE_AOSP_LAUNCHER), true)
+ifneq ($(call ifdef_any_of,$(USE_AOSP_LAUNCHER) $(USE_LAWNCHAIR)), true)
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
 DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
-ifneq ($(USE_LAWNCHAIR), true)
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/nusantara/overlay-pixel
-DEVICE_PACKAGE_OVERLAYS += vendor/nusantara/overlay-pixel/common
-endif #USE_LAWNCHAIR
-endif #USE_AOSP_LAUNCHER
+endif #USE_AOSP_LAUNCHER #USE_LAWNCHAIR
 endif #USE_GAPPS
 
 # MicroG
