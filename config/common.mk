@@ -89,6 +89,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # GMS
 
+# Disable iorapd
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.iorapd.enable=false
+
 ifeq ($(USE_GAPPS), true)
 $(call inherit-product, vendor/gms/products/gms.mk)
 DONT_DEXPREOPT_PREBUILTS := true
