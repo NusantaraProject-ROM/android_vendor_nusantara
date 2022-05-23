@@ -121,9 +121,4 @@
         -->
         <item>input_native_boot/deep_press_enabled=false</item>
     </string-array>
-
-    <string-array name="configs_base_soft">
-        <!-- Use new privacy indicators for location -->
-        <item>privacy/location_indicators_enabled=true</item>
-    </string-array>
 </resources>
