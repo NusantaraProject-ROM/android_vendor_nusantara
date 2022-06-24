@@ -144,6 +144,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mkfs.ntfs \
+    mount.ntfs
+
 # Quick Tap
 ifeq ($(TARGET_SUPPORTS_QUICK_TAP), true)
 PRODUCT_COPY_FILES += \
